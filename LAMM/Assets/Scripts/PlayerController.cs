@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 1.0f;
+    [SerializeField] private float moveSpeed = 1.0f;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * (MoveSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void AdjustPlayerFaceDirection()
