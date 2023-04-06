@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DamageSource : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private int damageAmount = 1;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Damage!");
+       if (other.gameObject.GetComponent<EnemyHealth>())
+            {
+            EnemyHealth enemyHealth =other.gameObject.GetComponent<EnemyHealth>();
+            enemyHealth.TakeDamage(1);
+            }
 
-        //Sword Colision Class - I'm using here a code that VS recommended
     }
 }

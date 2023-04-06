@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
         get{ return facingLeft; } set { facingLeft = value; }
     }
 
+    public static PlayerController Instance;
+
     [SerializeField] private float moveSpeed = 1.0f;
 
     private PlayerControls playerControls;
@@ -23,11 +25,14 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        Instance = this;
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
     }
+
+
 
     private void OnEnable()
     {
