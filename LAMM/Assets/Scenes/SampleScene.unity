@@ -26060,6 +26060,7 @@ GameObject:
   - component: {fileID: 2074518896}
   - component: {fileID: 2074518898}
   - component: {fileID: 2074518899}
+  - component: {fileID: 2074518900}
   m_Layer: 0
   m_Name: Canopy
   m_TagString: Untagged
@@ -30819,6 +30820,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &2074518900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074518894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674aa261e8e634b49a6d5938b2bd8b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxOffset: -0.15
 --- !u!1 &2088786954
 GameObject:
   m_ObjectHideFlags: 0
