@@ -37102,9 +37102,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246866007360150096, guid: a9931b57a15f8f74484ed3cceb9095bb, type: 3}
+      propertyPath: m_Intensity
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246866007360150096, guid: a9931b57a15f8f74484ed3cceb9095bb, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2960106099663066708, guid: a9931b57a15f8f74484ed3cceb9095bb, type: 3}
       propertyPath: m_Name
       value: Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316729262164486363, guid: a9931b57a15f8f74484ed3cceb9095bb, type: 3}
+      propertyPath: m_Name
+      value: Spot Light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
