@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2875133361317618698}
   - component: {fileID: 2251816178272462559}
   - component: {fileID: 6242288604234590524}
+  - component: {fileID: 5245060645916924292}
   m_Layer: 0
   m_Name: Magic Laser
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5038331757622003754
 SpriteRenderer:
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 951310e8101284e4abfe132f57caf91e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &4197463257878921611
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -120,8 +121,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0072733504, y: 0.029094161}
-  m_Size: {x: 0.9563603, y: 0.5054096}
+  m_Offset: {x: 0.502891, y: 0.0019368975}
+  m_Size: {x: 0.9020512, y: 0.45110068}
   m_Direction: 1
 --- !u!50 &2875133361317618698
 Rigidbody2D:
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5892d761c21bc994ea8cb7b4d54b51e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserGrowTime: 0.22
 --- !u!114 &6242288604234590524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0158e6d1377b4b83492e4700cb256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5245060645916924292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571904885239121108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87644b61be2bb548aef7687349d1ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 0.4
