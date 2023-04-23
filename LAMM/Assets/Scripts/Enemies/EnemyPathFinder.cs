@@ -26,9 +26,9 @@ public class EnemyPathFinder : MonoBehaviour
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
 
         if (moveDir.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        } else { spriteRenderer.flipX=false;}
+        { spriteRenderer.flipX = true;
+        } else if (moveDir.x > 0) { 
+            spriteRenderer.flipX=false;}
     }
 
     public void MoveTo(Vector2 targetPosition)
