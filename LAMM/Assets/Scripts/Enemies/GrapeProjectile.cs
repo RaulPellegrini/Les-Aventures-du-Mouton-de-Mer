@@ -11,7 +11,7 @@ public class GrapeProjectile : MonoBehaviour
     [SerializeField] private GameObject grapeProjectileShadow;
     [SerializeField] private float shadowHeight = -0.3f;
     [SerializeField] private GameObject splatterPrefab;
-    [SerializeField] public float grapeDamage = 1;
+    //[SerializeField] public float grapeDamage = 1;
 
 
     private void Start()
