@@ -88,7 +88,7 @@ public class PickUp : MonoBehaviour
         switch(pickUpType)
         {
             case PickUpType.GoldCoin:
-                //do
+                EconomyManager.Instance.UpdateCurrentGold();
                 Debug.Log("+1 Coin");
                 break;
 
