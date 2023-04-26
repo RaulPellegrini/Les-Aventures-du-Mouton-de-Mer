@@ -11,6 +11,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
+    [SerializeField] private bool canDie = true;
 
     private int currentHealth;
 
@@ -78,8 +79,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void CheckIfPlayerDeath()
     {
-        if (currentHealth <= 0 && !IsDead)
+        if (currentHealth <= 0 && !IsDead && canDie)
         {
+
             IsDead = true;
             Destroy(ActiveWeapon.Instance.gameObject);
             currentHealth = 0;
