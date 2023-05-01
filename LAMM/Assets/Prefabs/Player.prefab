@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2203038685704372078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.09, z: 0}
+  m_LocalPosition: {x: -0.05, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,7 +359,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1526280487, guid: d9fef712faab7bb4cb0d00cc3cff1212, type: 3}
+  m_Sprite: {fileID: -951346603, guid: a64a36648104a1045bbd75d7d2c427db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -423,7 +423,7 @@ Animator:
   m_GameObject: {fileID: 6105636744197037737}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7df4d61090561b4ca70d7ccaf176f78, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9c197dee804de1c4a946f90b76c4b53d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -466,8 +466,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004989684, y: -0.00057330675}
-  m_Size: {x: 0.68414104, y: 0.2764558}
+  m_Offset: {x: 0.0017215493, y: -0.09954102}
+  m_Size: {x: 0.65192443, y: 0.4032634}
   m_Direction: 1
 --- !u!114 &3091366804546569251
 MonoBehaviour:
@@ -484,6 +484,7 @@ MonoBehaviour:
   maxHealth: 3
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+  canDie: 1
 --- !u!114 &6858591004392904995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793fa0deae64fff4ea91d0aa213b1b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullStaminaImage: {fileID: 21300000, guid: 710ac2f0c44457d468d654d288d22359, type: 3}
+  emptyStaminaImage: {fileID: 21300000, guid: 06202e7b173865049948d41a9d4f3a4b, type: 3}
+  timeBetweenStaminaRefresh: 3
 --- !u!1 &8128921351661138724
 GameObject:
   m_ObjectHideFlags: 0

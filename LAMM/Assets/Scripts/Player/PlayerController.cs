@@ -16,6 +16,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private Transform weaponCollider;
 
+
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
@@ -24,10 +25,12 @@ public class PlayerController : Singleton<PlayerController>
     private Knockback knockback;
     private float startingMoveSpeed;
 
+
     private bool facingLeft = false;
     private bool isDashing = false;
 
-    
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,12 +40,14 @@ public class PlayerController : Singleton<PlayerController>
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
+
     }
 
     private void Start()
     {
         playerControls.Combat.Dash.performed += _ => Dash();
         startingMoveSpeed = moveSpeed;
+
         ActiveInventory.Instance.EquipStartingWeapon();
     }
 
@@ -85,20 +90,25 @@ public class PlayerController : Singleton<PlayerController>
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
+  
     private void AdjustPlayerFaceDirection()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
+
+
         if (mousePos.x < playerScreenPoint.x)
-        {
+        {                  
             mySpriteRender.flipX = true;
             FacingLeft = true;
+
         }
-        else 
-        { 
+        else
+        {
             mySpriteRender.flipX= false;
-            FacingLeft= false;
+            FacingLeft = false;
+
         }
     }
 

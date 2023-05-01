@@ -33,8 +33,10 @@ public class EnemyPathFinder : MonoBehaviour
 
     public void MoveTo(Vector2 targetPosition)
     {
+        Debug.Log(targetPosition.x + " " + targetPosition.y);
         moveDir = targetPosition;
     }
+
 
     public void StopMoving()
     {

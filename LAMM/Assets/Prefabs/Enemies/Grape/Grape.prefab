@@ -260,6 +260,7 @@ MonoBehaviour:
   enemyType: {fileID: 7657863132227496320}
   attackCooldown: 0.5
   stopMovingWhileAttacking: 1
+  noRoaming: 0
 --- !u!114 &8583925194203441596
 MonoBehaviour:
   m_ObjectHideFlags: 0
