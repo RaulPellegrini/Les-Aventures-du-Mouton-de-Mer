@@ -11,6 +11,8 @@ public class EnemyPathFinder : MonoBehaviour
     private Knockback knockback;
     private SpriteRenderer spriteRenderer;
 
+    public bool flip = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,9 +28,15 @@ public class EnemyPathFinder : MonoBehaviour
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
 
         if (moveDir.x < 0)
-        { spriteRenderer.flipX = true;
+        { 
+            spriteRenderer.flipX = true;
+            flip = true;
+
         } else if (moveDir.x > 0) { 
-            spriteRenderer.flipX=false;}
+            spriteRenderer.flipX=false;
+            flip = false;
+       
+        }
     }
 
     public void MoveTo(Vector2 targetPosition)

@@ -11,7 +11,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
+    [SerializeField] private bool guarding = false;
 
+
+    private Animator myAnimator;
 
     private bool stopRoaming = false;
     private bool canAttack = true;
@@ -25,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     }
     
     private Vector2 roamPosition;
-    private Vector2 spawnPosition;
+    //private Vector2 spawnPosition;
     private float timeRoaming = 0f;
     
  
@@ -36,9 +39,10 @@ public class EnemyAI : MonoBehaviour
     private EnemyPathFinder enemyPathFinder;
 
 
-    private void Awake()
+    public void Awake()
     {
         enemyPathFinder = GetComponent<EnemyPathFinder>();
+        myAnimator = GetComponent<Animator>();
         state = State.Roaming;
         //spawnPosition = transform.position;
     }
@@ -76,14 +80,16 @@ public class EnemyAI : MonoBehaviour
 
     private void Roaming()
     {
-        if (!stopRoaming)
+        if (!stopRoaming && !guarding)
         {
+            myAnimator.SetBool("Walking", true);
             timeRoaming += Time.deltaTime;
             enemyPathFinder.MoveTo(roamPosition);
             Debug.Log("Roaming");
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
             {
+
                 stopRoaming = true;
                 state = State.Chasing;
             }
@@ -103,7 +109,6 @@ public class EnemyAI : MonoBehaviour
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > chasingRange)
         {
             stopRoaming = false;
-            direction = transform.position;
             state = State.Roaming;
         }
 
@@ -115,7 +120,9 @@ public class EnemyAI : MonoBehaviour
 
             timeChasing += Time.deltaTime;
             enemyPathFinder.MoveTo(direction);
-            
+            myAnimator.SetBool("Walking", true);
+
+
             if (timeChasing > chasingChangeDirFloat)
             {
                 direction = GetChasingPosition();
@@ -129,7 +136,11 @@ public class EnemyAI : MonoBehaviour
         }
 
 
-        else { state = State.Roaming;}
+        else 
+        { 
+            myAnimator.SetBool("Walking", false); 
+            state = State.Roaming;
+        }
 
     }
 
