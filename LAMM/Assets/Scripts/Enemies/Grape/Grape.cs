@@ -21,12 +21,11 @@ public class Grape : MonoBehaviour, IEnemy
     {
         myAnimator.SetTrigger(ATTACK_HASH);
 
-        /*if (transform.position.x - PlayerController.Instance.transform.position.x < 0)
+        if (transform.position.x - PlayerController.Instance.transform.position.x < 0)
         { spriteRenderer.flipX = false;
         } else { 
             spriteRenderer.flipX = true; 
         }
-        */
 
     }
 

@@ -85,6 +85,7 @@ public class EnemyAI : MonoBehaviour
             myAnimator.SetBool("Walking", true);
             timeRoaming += Time.deltaTime;
             enemyPathFinder.MoveTo(roamPosition);
+            Debug.Log("Roaming");
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
             {
@@ -111,6 +112,9 @@ public class EnemyAI : MonoBehaviour
             state = State.Roaming;
         }
 
+        Debug.Log("Chasing!!");
+
+
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
         {
 
@@ -130,6 +134,8 @@ public class EnemyAI : MonoBehaviour
         {
             state = State.Attacking;
         }
+
+
         else 
         { 
             myAnimator.SetBool("Walking", false); 
@@ -151,12 +157,12 @@ public class EnemyAI : MonoBehaviour
         {
             canAttack = false;
             (enemyType as IEnemy).Attack();
+            Debug.Log("Attacking");
             StartCoroutine(AttackCooldownRoutine());
 
             if (stopMovingWhileAttacking)
             {
                 enemyPathFinder.StopMoving();
-                myAnimator.SetBool("walking", false);
             } else {
                 enemyPathFinder.MoveTo(roamPosition);
             }
@@ -187,8 +193,6 @@ public class EnemyAI : MonoBehaviour
         return direction;
         
     }
-
-
 
 
 
