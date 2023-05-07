@@ -11,7 +11,8 @@ public class EnemyPathFinder : MonoBehaviour
     private Knockback knockback;
     private SpriteRenderer spriteRenderer;
 
-    public bool flip = false;
+    public bool movingLeft = false;
+    public bool isflipped = false;
 
     private void Awake()
     {
@@ -28,26 +29,40 @@ public class EnemyPathFinder : MonoBehaviour
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
 
         if (moveDir.x < 0)
-        { 
-            spriteRenderer.flipX = true;
-            flip = true;
+        {
+            movingLeft = true;
+            if (movingLeft == true && moveDir.x < 0 && isflipped == false)
+            {
+                flipping();
+                //spriteRenderer.flipX=true;
+                isflipped = true;
+            }
 
-        } else if (moveDir.x > 0) { 
-            spriteRenderer.flipX=false;
-            flip = false;
+        } else if (moveDir.x > 0 && isflipped == true) 
+        {
+            movingLeft = false;
+            flipping();
+            //spriteRenderer.flipX=false;
+            isflipped = false;
        
         }
     }
 
     public void MoveTo(Vector2 targetPosition)
     {
-        Debug.Log(targetPosition.x + " " + targetPosition.y);
-        moveDir = targetPosition;
+         moveDir = targetPosition;
     }
 
 
     public void StopMoving()
     {
         moveDir = Vector3.zero;
+    }
+
+    private void flipping()
+    {
+        Vector3 localscale = transform.localScale;
+        localscale.x *= -1;
+        transform.localScale = localscale;
     }
 }

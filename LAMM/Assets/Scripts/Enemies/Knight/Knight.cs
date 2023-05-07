@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Knight : MonoBehaviour, IEnemy
 {
+    [SerializeField] GameObject KnightWeapon;
 
     private Animator myAnimator;
     private SpriteRenderer spriteRenderer;
@@ -15,6 +16,7 @@ public class Knight : MonoBehaviour, IEnemy
 
     public void Awake()
     {
+
         myAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -22,18 +24,21 @@ public class Knight : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        myAnimator.SetTrigger(ATTACK_HASH);
-        Debug.Log("attacking");
-        if (transform.position.x - PlayerController.Instance.transform.position.x < 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else
-        {
-            spriteRenderer.flipX = true;
-        }
 
+        myAnimator.SetTrigger(ATTACK_HASH);
+
+        
+        /* if (transform.position.x - PlayerController.Instance.transform.position.x < 0)
+         {
+             spriteRenderer.flipX = false;
+         }
+         else
+         {
+             spriteRenderer.flipX = true;
+         }
+        */
     }
+
 
 }
 
