@@ -29,6 +29,8 @@ public class PlayerController : Singleton<PlayerController>
     private bool facingLeft = false;
     private bool isDashing = false;
 
+
+
     protected override void Awake()
     {
         base.Awake();

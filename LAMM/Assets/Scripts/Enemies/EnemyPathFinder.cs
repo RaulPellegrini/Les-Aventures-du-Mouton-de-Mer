@@ -11,10 +11,7 @@ public class EnemyPathFinder : MonoBehaviour
     private Knockback knockback;
     private SpriteRenderer spriteRenderer;
 
-    public bool flipped = false;
-    public bool movingLeft = false;
-
-    public bool facingRight = true; //Depends on if your animation is by default facing right or left
+    public bool flip = false;
 
     private void Awake()
     {
@@ -27,10 +24,9 @@ public class EnemyPathFinder : MonoBehaviour
     private void FixedUpdate()
     {
         if (knockback.GettingKnockedBack){ return ; }
-        
-        FacingDirection();
+                
+        rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
 
-        /*
         if (moveDir.x < 0)
         { 
             spriteRenderer.flipX = true;
@@ -39,13 +35,13 @@ public class EnemyPathFinder : MonoBehaviour
         } else if (moveDir.x > 0) { 
             spriteRenderer.flipX=false;
             flip = false;
-
+       
         }
-        */
     }
 
     public void MoveTo(Vector2 targetPosition)
     {
+        Debug.Log(targetPosition.x + " " + targetPosition.y);
         moveDir = targetPosition;
     }
 
@@ -54,37 +50,4 @@ public class EnemyPathFinder : MonoBehaviour
     {
         moveDir = Vector3.zero;
     }
-
-    private void Flipping ()
-    {
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
-    }
-
-    public void FacingDirection() 
-    {
-        rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
-
-        if (moveDir.x < 0)
-        {
-            movingLeft = true;
-            if (moveDir.x < 0 && flipped == false)
-            {
-                flipped = true;
-                Flipping();
-            }
-
-        }
-        if (moveDir.y > 0)
-        {
-            movingLeft = false;
-            if (moveDir.y > 0 && flipped == true)
-            {
-                flipped = false;
-                Flipping();
-            }
-        }
-    }
-
 }

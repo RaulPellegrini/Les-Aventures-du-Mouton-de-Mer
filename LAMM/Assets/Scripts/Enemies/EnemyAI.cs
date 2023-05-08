@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -86,6 +85,7 @@ public class EnemyAI : MonoBehaviour
             myAnimator.SetBool("Walking", true);
             timeRoaming += Time.deltaTime;
             enemyPathFinder.MoveTo(roamPosition);
+            Debug.Log("Roaming");
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
             {
@@ -111,6 +111,8 @@ public class EnemyAI : MonoBehaviour
             stopRoaming = false;
             state = State.Roaming;
         }
+
+        Debug.Log("Chasing!!");
 
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
@@ -148,57 +150,26 @@ public class EnemyAI : MonoBehaviour
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > attackRange)
         {
-
             state = State.Chasing;
         }
 
         if (attackRange !=0 && canAttack)
         {
-            
             canAttack = false;
-
             (enemyType as IEnemy).Attack();
-
+            Debug.Log("Attacking");
             StartCoroutine(AttackCooldownRoutine());
 
             if (stopMovingWhileAttacking)
             {
-                myAnimator.SetBool("Walking", false);
                 enemyPathFinder.StopMoving();
-
             } else {
                 enemyPathFinder.MoveTo(roamPosition);
             }
 
         }
-
-        if (attackRange == 0 && canAttack) 
-        {
-
-            canAttack = false;
-
-            (enemyType as IEnemy).Attack();
-
-            StartCoroutine(AttackCooldownRoutine());
-
-            if (stopMovingWhileAttacking)
-            {
-                myAnimator.SetBool("Walking", false);
-                enemyPathFinder.StopMoving();
-            }
-            else
-            {
-                enemyPathFinder.MoveTo(roamPosition);
-            }
-        }
-
     }
 
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-       Attacking();
-    }
-    */
 
     private IEnumerator AttackCooldownRoutine()
     {
@@ -217,8 +188,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 GetChasingPosition()
     {
         timeChasing = 0f;
-        direction = (PlayerController.Instance.transform.position - transform.position);
-        direction.Normalize();
+        direction = (PlayerController.Instance.transform.position - transform.position).normalized;
         
         return direction;
         
