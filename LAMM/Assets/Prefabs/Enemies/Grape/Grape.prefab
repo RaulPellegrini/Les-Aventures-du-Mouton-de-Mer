@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7035030701658895123
 Transform:
   m_ObjectHideFlags: 0
@@ -257,10 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
   attackRange: 5
+  chasingRange: 10
+  chasingChangeDirFloat: 0.2
   enemyType: {fileID: 7657863132227496320}
   attackCooldown: 0.5
   stopMovingWhileAttacking: 1
-  noRoaming: 0
+  guarding: 0
 --- !u!114 &8583925194203441596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  flip: 0
 --- !u!114 &2296602563851840641
 MonoBehaviour:
   m_ObjectHideFlags: 0
