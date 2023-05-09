@@ -7,6 +7,9 @@ public class EnemyPathFinder : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private bool canMove = true;
 
+
+    readonly int WALKING_HASH = Animator.StringToHash("Walking");
+
     private Rigidbody2D rb;
     private Vector2 moveDir;
     private Knockback knockback;
@@ -40,19 +43,19 @@ public class EnemyPathFinder : MonoBehaviour
 
     public void MoveTo(Vector2 targetPosition)
     {
-        myAnimator.SetBool("Walking", true);
+        myAnimator.SetBool(WALKING_HASH, true);
         moveDir = targetPosition;
     }
 
     public void StopMoving()
     {
-        myAnimator.SetBool("Walking", false);
+        myAnimator.SetBool(WALKING_HASH, false);
         
         moveDir = Vector3.zero;
     }
     public void StopMoveStart()
     {
-        myAnimator.SetBool("Walking", false);
+        myAnimator.SetBool(WALKING_HASH, false);
 
         canMove = false;
         moveDir = Vector3.zero;
