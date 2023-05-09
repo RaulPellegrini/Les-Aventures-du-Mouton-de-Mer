@@ -232,10 +232,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2159848090968511896, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
       propertyPath: m_Name
-      value: Ghost (4)
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 2159848090968511896, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522680328089645291, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: startingHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522680328089645291, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: knockBackThurst
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049525386297300520, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: guarding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049525386297300520, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049525386297300520, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: chasingRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049525386297300520, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: returningRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049525386297300520, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: stopMovingWhileAttacking
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22222,10 +22250,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1832934281}
     m_Modifications:
-    - target: {fileID: 1643190146553881000, guid: 14bafcc14263ddf4b843376aa729ec0b, type: 3}
-      propertyPath: chasingRange
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7035030701658895123, guid: 14bafcc14263ddf4b843376aa729ec0b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -22273,6 +22297,10 @@ PrefabInstance:
     - target: {fileID: 7874576675352387061, guid: 14bafcc14263ddf4b843376aa729ec0b, type: 3}
       propertyPath: m_Name
       value: Grape
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874576675352387061, guid: 14bafcc14263ddf4b843376aa729ec0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29843,7 +29871,7 @@ Tilemap:
       - {fileID: -373527236, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 1131534023, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -801075851, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.5961504
+      m_AnimationSpeed: 4.952757
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 3, z: 0}
@@ -29853,7 +29881,7 @@ Tilemap:
       - {fileID: -373527236, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 1131534023, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -801075851, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 4.4555407
+      m_AnimationSpeed: 4.37963
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 4, z: 0}
@@ -29863,7 +29891,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.8731875
+      m_AnimationSpeed: 4.88897
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 4, z: 0}
@@ -29873,7 +29901,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.5869842
+      m_AnimationSpeed: 4.959072
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

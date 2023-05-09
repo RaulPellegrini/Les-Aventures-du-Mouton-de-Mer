@@ -31,12 +31,10 @@ public class EnemyPathFinder : MonoBehaviour
         if (moveDir.x < 0)
         {
             spriteRenderer.flipX = true;
-
         }
         else if (moveDir.x > 0)
         {
             spriteRenderer.flipX = false;
-
         }
     }
 
@@ -47,17 +45,12 @@ public class EnemyPathFinder : MonoBehaviour
 
     public void StopMoving()
     {
-
         moveDir = Vector3.zero;
-
     }
     public void StopMoveStart()
     {
-
         canMove = false;
         moveDir = Vector3.zero;
-
-
     }
 
     public void StopMoveEnd()

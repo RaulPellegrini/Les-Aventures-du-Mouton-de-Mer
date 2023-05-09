@@ -257,10 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
   attackRange: 5
+  chasingRange: 10
+  chasingChangeDirFloat: 0.2
   enemyType: {fileID: 7657863132227496320}
   attackCooldown: 0.5
   stopMovingWhileAttacking: 1
-  noRoaming: 0
+  guarding: 0
 --- !u!114 &8583925194203441596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  canMove: 1
 --- !u!114 &2296602563851840641
 MonoBehaviour:
   m_ObjectHideFlags: 0

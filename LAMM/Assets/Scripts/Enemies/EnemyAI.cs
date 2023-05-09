@@ -14,37 +14,32 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool guarding = false;
 
 
+    private State state;
+    private EnemyPathFinder enemyPathFinder;
     private Animator myAnimator;
 
     private bool stopRoaming = false;
     private bool canAttack = true;
-
-    private enum State
-    {
-        Chasing,
-        Roaming,
-        Attacking
-        
-    }
-    
+           
     private Vector2 roamPosition;
-    //private Vector2 spawnPosition;
     private float timeRoaming = 0f;
     
  
     private float timeChasing = 4f;
     private Vector2 direction;
 
-    private State state;
-    private EnemyPathFinder enemyPathFinder;
-
+    private enum State
+    {
+        Chasing,
+        Roaming,
+        Attacking,
+    }
 
     public void Awake()
     {
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         myAnimator = GetComponent<Animator>();
         state = State.Roaming;
-        //spawnPosition = transform.position;
     }
 
     private void Start()
@@ -74,12 +69,15 @@ public class EnemyAI : MonoBehaviour
             case State.Chasing:
                 Chasing();
             break;
+
+  
         }
     }
 
 
     private void Roaming()
     {
+
         if (!stopRoaming && !guarding)
         {
 
@@ -99,7 +97,12 @@ public class EnemyAI : MonoBehaviour
                 roamPosition = GetRoamingPosition();
             }
         }
-        else { state = State.Chasing; }
+        else 
+        {
+
+            state = State.Chasing; 
+        
+        }
 
         
     }
@@ -109,6 +112,7 @@ public class EnemyAI : MonoBehaviour
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > chasingRange)
         {
             stopRoaming = false;
+            enemyPathFinder.StopMoving();
             state = State.Roaming;
         }
 
@@ -153,7 +157,6 @@ public class EnemyAI : MonoBehaviour
 
             if (stopMovingWhileAttacking)
             {
-
                 enemyPathFinder.StopMoving();
 
             } else {
@@ -163,7 +166,6 @@ public class EnemyAI : MonoBehaviour
 
         }
     }
-
 
     private IEnumerator AttackCooldownRoutine()
     {
@@ -187,7 +189,5 @@ public class EnemyAI : MonoBehaviour
         return direction;
         
     }
-
-
 
 }
