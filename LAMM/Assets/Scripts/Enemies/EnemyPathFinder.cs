@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPathFinder : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private float moveCooldown = 1f;
+    //[SerializeField] private float moveCooldown = 1f;
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
@@ -57,22 +57,27 @@ public class EnemyPathFinder : MonoBehaviour
         moveDir = Vector3.zero;
 
     }
-    public void WaitBeforeMove()
+    public void StopMoveStart()
     {
 
         canMove = false;
-
-        StartCoroutine(WaitBeforeMoveRotine());
+        moveDir = Vector3.zero;
+        //StartCoroutine(WaitBeforeMoveRotine());
 
     }
 
-    private IEnumerator WaitBeforeMoveRotine()
+    public void StopMoveEnd()
+    {
+        canMove = true;
+    }
+
+    /*private IEnumerator WaitBeforeMoveRotine()
     {
  
         moveDir = Vector3.zero;
         yield return new WaitForSeconds(moveCooldown);
         canMove = true;
     }
-
+    */
 
 }

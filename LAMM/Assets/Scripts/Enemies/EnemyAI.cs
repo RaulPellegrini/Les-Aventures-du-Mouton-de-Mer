@@ -78,7 +78,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    private void Roaming()
+    private void Roaming() //Scouting
     {
         if (!stopRoaming && !guarding)
         {
@@ -161,8 +161,8 @@ public class EnemyAI : MonoBehaviour
 
             if (stopMovingWhileAttacking)
             {
-                //myAnimator.SetBool("Walking", false);
-                enemyPathFinder.WaitBeforeMove();
+
+                enemyPathFinder.StopMoving();
 
             } else {
 
