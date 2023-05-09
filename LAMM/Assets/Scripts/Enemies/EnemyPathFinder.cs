@@ -5,25 +5,19 @@ using UnityEngine;
 public class EnemyPathFinder : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-    //[SerializeField] private float moveCooldown = 1f;
+    [SerializeField] private bool canMove = true;
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
     private Knockback knockback;
     private SpriteRenderer spriteRenderer;
-    //Moving the animation control to here
-    
-    private Animator myAnimator;
 
-    private bool canMove = true;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
-        //Moving the animation control to here
-        myAnimator = GetComponent<Animator>();
 
     }
 
@@ -62,7 +56,7 @@ public class EnemyPathFinder : MonoBehaviour
 
         canMove = false;
         moveDir = Vector3.zero;
-        //StartCoroutine(WaitBeforeMoveRotine());
+
 
     }
 
@@ -70,14 +64,5 @@ public class EnemyPathFinder : MonoBehaviour
     {
         canMove = true;
     }
-
-    /*private IEnumerator WaitBeforeMoveRotine()
-    {
- 
-        moveDir = Vector3.zero;
-        yield return new WaitForSeconds(moveCooldown);
-        canMove = true;
-    }
-    */
 
 }

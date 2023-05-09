@@ -78,13 +78,12 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    private void Roaming() //Scouting
+    private void Roaming()
     {
         if (!stopRoaming && !guarding)
         {
 
             timeRoaming += Time.deltaTime;
-            //myAnimator.SetBool("Walking", true);
             enemyPathFinder.MoveTo(roamPosition);
 
 
@@ -109,7 +108,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > chasingRange)
         {
-
             stopRoaming = false;
             state = State.Roaming;
         }
@@ -119,26 +117,20 @@ public class EnemyAI : MonoBehaviour
         {
 
             timeChasing += Time.deltaTime;
-            //myAnimator.SetBool("Walking", true);
             enemyPathFinder.MoveTo(direction);
-
 
             if (timeChasing > chasingChangeDirFloat)
             {
                 direction = GetChasingPosition();
             }
-
         }
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
         {
             state = State.Attacking;
-        }
-
-
-        else 
+        }   
+        else
         { 
-            //myAnimator.SetBool("Walking", false); 
             state = State.Roaming;
         }
 
