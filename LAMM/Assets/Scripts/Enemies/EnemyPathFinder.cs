@@ -6,7 +6,7 @@ public class EnemyPathFinder : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private bool canMove = true;
-
+    public bool facingRight = true;
 
     readonly int WALKING_HASH = Animator.StringToHash("Walking");
 
@@ -31,14 +31,26 @@ public class EnemyPathFinder : MonoBehaviour
 
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
         
-        if (moveDir.x < 0)
+        DirectionCheck();
+
+    }
+
+    public void DirectionCheck()
+    {
+        if (moveDir.x < 0 && facingRight == true)
         {
-            spriteRenderer.flipX = true;
+            Flip();
+            facingRight = false;
+            //spriteRenderer.flipX = true;
         }
-        else if (moveDir.x > 0)
+        else if (moveDir.x > 0 && facingRight == false)
         {
-            spriteRenderer.flipX = false;
+
+            Flip();
+            facingRight = true;
+            //spriteRenderer.flipX = false;
         }
+
     }
 
     public void MoveTo(Vector2 targetPosition)
@@ -66,4 +78,12 @@ public class EnemyPathFinder : MonoBehaviour
         canMove = true;
     }
 
+    public void Flip()
+    {
+
+       facingRight = !facingRight;
+       Vector3 theScale = transform.localScale;
+       theScale.x *= -1;
+       transform.localScale = theScale;
+    }
 }
