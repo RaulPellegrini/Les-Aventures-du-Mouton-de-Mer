@@ -10,6 +10,7 @@ public class Knight : MonoBehaviour, IEnemy
     private Animator myAnimator;
     private SpriteRenderer spriteRenderer;
 
+
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
 
 

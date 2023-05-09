@@ -11,14 +11,14 @@ public class EnemyPathFinder : MonoBehaviour
     private Vector2 moveDir;
     private Knockback knockback;
     private SpriteRenderer spriteRenderer;
-
+    private Animator myAnimator;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
-
+        myAnimator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -40,15 +40,20 @@ public class EnemyPathFinder : MonoBehaviour
 
     public void MoveTo(Vector2 targetPosition)
     {
+        myAnimator.SetBool("Walking", true);
         moveDir = targetPosition;
     }
 
     public void StopMoving()
     {
+        myAnimator.SetBool("Walking", false);
+        
         moveDir = Vector3.zero;
     }
     public void StopMoveStart()
     {
+        myAnimator.SetBool("Walking", false);
+
         canMove = false;
         moveDir = Vector3.zero;
     }
