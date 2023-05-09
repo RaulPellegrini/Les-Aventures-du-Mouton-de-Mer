@@ -82,14 +82,15 @@ public class EnemyAI : MonoBehaviour
     {
         if (!stopRoaming && !guarding)
         {
-            myAnimator.SetBool("Walking", true);
+
             timeRoaming += Time.deltaTime;
+            //myAnimator.SetBool("Walking", true);
             enemyPathFinder.MoveTo(roamPosition);
-            Debug.Log("Roaming");
+
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
             {
-
+                
                 stopRoaming = true;
                 state = State.Chasing;
             }
@@ -108,19 +109,18 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > chasingRange)
         {
+
             stopRoaming = false;
             state = State.Roaming;
         }
-
-        Debug.Log("Chasing!!");
 
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
         {
 
             timeChasing += Time.deltaTime;
+            //myAnimator.SetBool("Walking", true);
             enemyPathFinder.MoveTo(direction);
-            myAnimator.SetBool("Walking", true);
 
 
             if (timeChasing > chasingChangeDirFloat)
@@ -138,7 +138,7 @@ public class EnemyAI : MonoBehaviour
 
         else 
         { 
-            myAnimator.SetBool("Walking", false); 
+            //myAnimator.SetBool("Walking", false); 
             state = State.Roaming;
         }
 
@@ -157,13 +157,15 @@ public class EnemyAI : MonoBehaviour
         {
             canAttack = false;
             (enemyType as IEnemy).Attack();
-            Debug.Log("Attacking");
-            StartCoroutine(AttackCooldownRoutine());
+             StartCoroutine(AttackCooldownRoutine());
 
             if (stopMovingWhileAttacking)
             {
-                enemyPathFinder.StopMoving();
+                //myAnimator.SetBool("Walking", false);
+                enemyPathFinder.WaitBeforeMove();
+
             } else {
+
                 enemyPathFinder.MoveTo(roamPosition);
             }
 
