@@ -166,22 +166,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.033332065
-      value: 0.0070646703
-      inSlope: -1.7147909
-      outSlope: -1.7147909
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.07225917
+      outWeight: 0
     - serializedVersion: 3
-      time: 1.0124979
-      value: 0.0032998812
-      inSlope: -2.056446
-      outSlope: -2.056446
+      time: 1.0000867
+      value: 0.000009602052
+      inSlope: -1.9296218
+      outSlope: -1.9296218
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.045452643
+      inWeight: 0.054835573
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -191,3 +191,4 @@ MonoBehaviour:
   grapeProjectileShadow: {fileID: 6569351076430022965, guid: 36af00845b77be343aad1cb91646bfd5, type: 3}
   shadowHeight: -0.3
   splatterPrefab: {fileID: 1568380262335065703, guid: 4a245e1fe2d95d648992b3a45ae05ea1, type: 3}
+  particleOnHitPrefabVFX: {fileID: 8266023964012809901, guid: 250a81a0274f767469bccab1f0fc0a76, type: 3}

@@ -12,11 +12,11 @@ public class GrapeProjectile : MonoBehaviour
     [SerializeField] private float shadowHeight = -0.3f;
     [SerializeField] private GameObject splatterPrefab;
     //[SerializeField] public float grapeDamage = 1;
-
+    [SerializeField] private GameObject particleOnHitPrefabVFX;
 
     private void Start()
     {
-        GameObject grapeShadow = Instantiate(grapeProjectileShadow, transform.position + new Vector3(0,shadowHeight,0), Quaternion.identity);
+        GameObject grapeShadow = Instantiate(grapeProjectileShadow, transform.position + new Vector3(0, shadowHeight, 0), Quaternion.identity);
         Vector3 playerPos = PlayerController.Instance.transform.position;
         Vector3 grapeShadowStartPosition = grapeShadow.transform.position;
 
@@ -59,8 +59,18 @@ public class GrapeProjectile : MonoBehaviour
             yield return null;
         }
 
-        Destroy (grapeShadow);
+        Destroy(grapeShadow);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Indestructible indesctruitible = other.gameObject.GetComponent<Indestructible>();
 
+        if (indesctruitible)
+        {
+            Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+
+    }
 }
