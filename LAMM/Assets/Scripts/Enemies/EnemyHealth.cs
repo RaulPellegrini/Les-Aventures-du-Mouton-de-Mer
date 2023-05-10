@@ -9,6 +9,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject deathVFXPrefab;
     [SerializeField] private float knockBackThurst = 15f;
 
+    public bool halfHealth = false;
+    public bool quarterHealth = false;
+
+
+
     private int currentHealth;
     private Knockback knockback;
     private Flash flash;
@@ -27,6 +32,9 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage) 
     { 
         currentHealth -= damage;
+        if (currentHealth <= startingHealth*1/2) { halfHealth = true; }
+        if (currentHealth <= startingHealth*1/4) { quarterHealth = true; }
+
         knockback.GetKnockedBack(PlayerController.Instance.transform, knockBackThurst);
         StartCoroutine(flash.FlashRoutine());
         StartCoroutine(CheckDetectDeathRoutine());
