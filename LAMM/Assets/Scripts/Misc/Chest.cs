@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Chest : MonoBehaviour
 {
 
     [SerializeField] private int startingHealth = 3;
     [SerializeField] private GameObject deathVFXPrefab;
     [SerializeField] private float knockBackThurst = 15f;
-    [SerializeField] private bool Chest = false;
 
     private Animator myAnimator;
-
     public bool halfHealth = false;
     public bool quarterHealth = false;
-
 
 
     private int currentHealth;
     private Knockback knockback;
     private Flash flash;
+
+    readonly int DESTROY_HASH = Animator.StringToHash("Destroy");
 
     private void Awake()
     {
@@ -33,11 +32,11 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damage) 
-    { 
+    public void TakeDamage(int damage)
+    {
         currentHealth -= damage;
-        if (currentHealth <= startingHealth*1/2) { halfHealth = true; }
-        if (currentHealth <= startingHealth*1/4) { quarterHealth = true; }
+        if (currentHealth <= startingHealth * 1 / 2) { halfHealth = true; }
+        if (currentHealth <= startingHealth * 1 / 4) { quarterHealth = true; }
 
         knockback.GetKnockedBack(PlayerController.Instance.transform, knockBackThurst);
         StartCoroutine(flash.FlashRoutine());
@@ -52,26 +51,19 @@ public class EnemyHealth : MonoBehaviour
 
     private void DetectDeath()
     {
-        if (currentHealth <= 0 && !Chest) 
+        if (currentHealth <= 0)
         {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            myAnimator.SetTrigger(DESTROY_HASH);
             GetComponent<PickUpSpawner>().DropItems();
-            Destroy(gameObject);
-        
+
+
         }
 
-        if (currentHealth <= 0 && Chest)
-        {
-
-            myAnimator.SetTrigger("Destroy");
-        }
-    
     }
 
-    private void Destroy()
+    public void Destroy()
     {
-        Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
-        GetComponent<PickUpSpawner>().DropItems();
         Destroy(gameObject);
     }
 }

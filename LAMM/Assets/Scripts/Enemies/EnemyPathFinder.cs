@@ -13,12 +13,10 @@ public class EnemyPathFinder : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveDir;
     private Knockback knockback;
-    private SpriteRenderer spriteRenderer;
     private Animator myAnimator;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();

@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2524501320464713371
 SpriteRenderer:
@@ -291,6 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 22
   particleOnHitPrefabVFX: {fileID: 8266023964012809901, guid: db8a811572eb24a4ab989db29543d705, type: 3}
+  isEnemyProjectile: 0
+  projectileRange: 6
 --- !u!114 &-5837919563187094661
 MonoBehaviour:
   m_ObjectHideFlags: 0

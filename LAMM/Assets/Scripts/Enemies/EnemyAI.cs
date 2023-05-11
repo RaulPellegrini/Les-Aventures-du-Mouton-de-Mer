@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     private State state;
     private EnemyPathFinder enemyPathFinder;
-    private Animator myAnimator;
+
 
     private bool stopRoaming = false;
     private bool canAttack = true;
@@ -38,7 +38,6 @@ public class EnemyAI : MonoBehaviour
     public void Awake()
     {
         enemyPathFinder = GetComponent<EnemyPathFinder>();
-        myAnimator = GetComponent<Animator>();
         state = State.Roaming;
     }
 

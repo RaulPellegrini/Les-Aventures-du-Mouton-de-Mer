@@ -8,11 +8,11 @@ using UnityEngine.EventSystems;
 public class KnightBoss : MonoBehaviour, IEnemy
 {
 
+    [SerializeField] GameObject secondPhaseVFX; 
+
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
     private EnemyHealth enemyHealth;
-
-
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int ATTACK2_HASH = Animator.StringToHash("Attack2");
@@ -24,12 +24,23 @@ public class KnightBoss : MonoBehaviour, IEnemy
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         enemyHealth = GetComponent<EnemyHealth>();
+    }
 
+    private void Update()
+    {
+        if (enemyHealth.halfHealth == true)
+        {
+            InitiateVFX();
+        }
+    }
+
+    private void InitiateVFX()
+    {
+        secondPhaseVFX.SetActive(true);
     }
 
     public void Attack()
     {
-
         
         if (enemyHealth.halfHealth == true)
         {

@@ -8,8 +8,7 @@ public class Knight : MonoBehaviour, IEnemy
 {
 
     private Animator myAnimator;
-    private SpriteRenderer spriteRenderer;
-    private EnemyPathFinder enemyPathFinder;
+        private EnemyPathFinder enemyPathFinder;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
@@ -18,7 +17,6 @@ public class Knight : MonoBehaviour, IEnemy
     public void Awake()
     {
         myAnimator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
 
     }

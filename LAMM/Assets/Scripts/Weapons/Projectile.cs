@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float moveSpeed = 22f;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
     [SerializeField] private bool isEnemyProjectile = false;
-    [SerializeField] private float projectileRange = 10f;
+    [SerializeField] private float projectileRange = 6f;
 
     private Vector3 startPosition;
 
@@ -56,6 +56,11 @@ public class Projectile : MonoBehaviour
         
     }
 
+    private void MoveProjectile()
+    {
+        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+    }
+
     private void DetectFireDistance()
     {
         if (Vector3.Distance(transform.position, startPosition) > projectileRange)
@@ -64,8 +69,5 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void MoveProjectile()
-    {
-        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
-    }
+
 }
