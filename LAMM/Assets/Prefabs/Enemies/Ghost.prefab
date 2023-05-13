@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 3
+  attackRange: 8
   chasingRange: 10
   chasingChangeDirFloat: 0.2
   enemyType: {fileID: 3015637200284868048}
@@ -293,6 +293,9 @@ MonoBehaviour:
   startingHealth: 3
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 15
+  Chest: 0
+  halfHealth: 0
+  quarterHealth: 0
 --- !u!114 &4745269005486451893
 MonoBehaviour:
   m_ObjectHideFlags: 0

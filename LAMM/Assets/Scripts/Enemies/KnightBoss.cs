@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +15,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
     private EnemyPathFinder enemyPathFinder;
     private EnemyHealth enemyHealth;
 
+
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int ATTACK2_HASH = Animator.StringToHash("Attack2");
 
@@ -24,6 +26,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         enemyHealth = GetComponent<EnemyHealth>();
+
     }
 
     private void Update()
@@ -41,39 +44,37 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        
+
         if (enemyHealth.halfHealth == true)
         {
-            myAnimator.SetTrigger(ATTACK2_HASH);
 
-            if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = true;
-            }
-            if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = false;
-            }
+            myAnimator.SetTrigger(ATTACK2_HASH);
+            SideDetection();
+
         }
 
         else
         {
             myAnimator.SetTrigger(ATTACK_HASH);
+            SideDetection();
 
-            if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = true;
-            }
-            if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = false;
-            }
         }
+    
 
+    }
+
+    private void SideDetection()
+    {
+        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = true;
+        }
+        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = false;
+        }
     }
 
 }

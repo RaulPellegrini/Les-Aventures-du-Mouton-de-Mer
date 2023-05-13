@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class ActiveInventory : Singleton<ActiveInventory>
 {
-    private int activeSlotIndexNum = 0;
+    [SerializeField] GameObject invetorySlot1;
+    [SerializeField] GameObject invetorySlot2;
+    [SerializeField] GameObject invetorySlot3;
 
+    private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
+
 
     protected override void Awake()
     {
         base.Awake();
         playerControls = new PlayerControls();
+
     }
 
     private void Start()
     {
-        playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
-                
+        playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());         
     }
+
+    public void knightBossInventory() { invetorySlot1.SetActive(true); }
 
     public void EquipStartingWeapon()
     {
@@ -74,4 +80,6 @@ public class ActiveInventory : Singleton<ActiveInventory>
         newWeapon.transform.parent = ActiveWeapon.Instance.transform;
         ActiveWeapon.Instance.NewWeapon(newWeapon.GetComponent<MonoBehaviour>());
     }
+
+    
 }

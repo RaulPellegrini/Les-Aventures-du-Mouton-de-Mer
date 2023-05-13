@@ -10,22 +10,26 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float knockBackThurst = 15f;
     [SerializeField] private bool Chest = false;
 
+    [SerializeField] bool knightBoss = false;
+
+
+
     private Animator myAnimator;
 
     public bool halfHealth = false;
     public bool quarterHealth = false;
 
-
-
     private int currentHealth;
     private Knockback knockback;
     private Flash flash;
+
 
     private void Awake()
     {
         knockback = GetComponent<Knockback>();
         flash = GetComponent<Flash>();
         myAnimator = GetComponent<Animator>();
+ 
     }
 
     private void Start()
@@ -57,21 +61,23 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             GetComponent<PickUpSpawner>().DropItems();
             Destroy(gameObject);
-        
+
+            if (knightBoss == true) { ActiveInventory.Instance.knightBossInventory(); }
+
+
         }
 
-        if (currentHealth <= 0 && Chest)
-        {
-
-            myAnimator.SetTrigger("Destroy");
-        }
+        if (currentHealth <= 0 && Chest) { myAnimator.SetTrigger("Destroy");}
     
     }
 
+#pragma warning disable IDE0051 // Remove unused private members
     private void Destroy()
+#pragma warning restore IDE0051 // Remove unused private members
     {
         Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
         GetComponent<PickUpSpawner>().DropItems();
         Destroy(gameObject);
     }
+
 }

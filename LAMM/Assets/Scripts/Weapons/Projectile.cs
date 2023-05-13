@@ -24,11 +24,15 @@ public class Projectile : MonoBehaviour
         
     }
 
-    public void UpdateProjectileRange(float projectilleRange)
-    {
-        this.projectileRange = projectileRange;
-    }
 
+    public void UpdateProjectileRange(float projectilleRange)
+
+    {
+#pragma warning disable CS1717 // Assignment made to same variable
+        this.projectileRange = projectileRange;
+#pragma warning restore CS1717 // Assignment made to same variable
+    }
+    
     public void UpdateMoveSpeed(float moveSpeed)
     {
         this.moveSpeed = moveSpeed;
@@ -58,7 +62,7 @@ public class Projectile : MonoBehaviour
 
     private void MoveProjectile()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+        transform.Translate(moveSpeed * Time.deltaTime * Vector3.right);
     }
 
     private void DetectFireDistance()

@@ -46,7 +46,7 @@ Transform:
   - {fileID: 1202508527388562756}
   - {fileID: 1832152671563346722}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6366267112544191002
 SpriteRenderer:
@@ -245,6 +245,7 @@ MonoBehaviour:
   startingHealth: 30
   deathVFXPrefab: {fileID: 6308911447610628657, guid: d8cfc084a55cf9c4f9c0fd7d70af8fb3, type: 3}
   knockBackThurst: 1
+  Chest: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &1862247086663327733
@@ -429,7 +430,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05727472, y: 0.9287221}
@@ -447,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemyAttack: 1
 --- !u!1 &6361826980014085800
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +648,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05727472, y: 0.9287221}
@@ -664,6 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemyAttack: 1
 --- !u!1001 &6036928541028348598
 PrefabInstance:
   m_ObjectHideFlags: 0

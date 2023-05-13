@@ -57,7 +57,6 @@ public class Chest : MonoBehaviour
             myAnimator.SetTrigger(DESTROY_HASH);
             GetComponent<PickUpSpawner>().DropItems();
 
-
         }
 
     }
