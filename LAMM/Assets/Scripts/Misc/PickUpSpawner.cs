@@ -5,29 +5,39 @@ using UnityEngine;
 public class PickUpSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject goldenCoin, healthGlobe, staminaGlobe;
-
+    [SerializeField] private bool ItemDrop = true;
     public void DropItems()
     {
-        int randomNum = Random.Range(1, 4);
 
-        if (randomNum == 1)
+        if (ItemDrop)
         {
-            Instantiate(healthGlobe, transform.position, Quaternion.identity);
-        }
-        
-        if (randomNum == 2)
-        {
-            Instantiate(staminaGlobe, transform.position, Quaternion.identity);
-        }
+            int randomNum = Random.Range(1, 4);
 
-        if(randomNum == 3)
-        {
-            int randomAmountOfGold = Random.Range(1,4);
-            for (int i = 0; i < randomAmountOfGold; i++)
+            if (randomNum == 1)
             {
-                Instantiate(goldenCoin, transform.position, Quaternion.identity);
+                Instantiate(healthGlobe, transform.position, Quaternion.identity);
             }
-            
+
+            if (randomNum == 2)
+            {
+                Instantiate(staminaGlobe, transform.position, Quaternion.identity);
+            }
+
+            if (randomNum == 3)
+            {
+                int randomAmountOfGold = Random.Range(1, 4);
+                for (int i = 0; i < randomAmountOfGold; i++)
+                {
+                    Instantiate(goldenCoin, transform.position, Quaternion.identity);
+                }
+
+            }
+
         }
+        else
+        {
+
+        }
+
     }
 }
