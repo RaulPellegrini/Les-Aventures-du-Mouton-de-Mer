@@ -88,6 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905080d55406b9f4aab98d09e2805942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invetorySlot1: {fileID: 0}
+  invetorySlot2: {fileID: 0}
+  invetorySlot3: {fileID: 0}
 --- !u!1 &1099511557203152130
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2065379098296664735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -154,7 +157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 29763ff2256631d4da31739c8f717e4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -176,7 +179,7 @@ GameObject:
   - component: {fileID: 5355122667715140657}
   - component: {fileID: 4101450281869568505}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Stamina Globe Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +673,7 @@ GameObject:
   - component: {fileID: 8158033972459180872}
   - component: {fileID: 6590150687526225991}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Stamina Globe Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1390,7 +1393,7 @@ GameObject:
   - component: {fileID: 8037586491539646512}
   - component: {fileID: 1297740821022024545}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Stamina Globe Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29763ff2256631d4da31739c8f717e4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bfbcc200e4e3f941853496cb6c944f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1697,7 +1700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ea1aacd1522904daed26c0737046b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInfo: {fileID: 11400000, guid: c98d349ba4d72884a93c1862beff799e, type: 2}
+  weaponInfo: {fileID: 11400000, guid: 273b3a31b64107a49b688db0887f37d3, type: 2}
 --- !u!1 &5829290165533850024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1739,7 @@ RectTransform:
   - {fileID: 5872491450235356539}
   - {fileID: 4129259321688568127}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2272,7 +2275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ea1aacd1522904daed26c0737046b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInfo: {fileID: 0}
+  weaponInfo: {fileID: 11400000, guid: c98d349ba4d72884a93c1862beff799e, type: 2}
 --- !u!1 &8769937716910730097
 GameObject:
   m_ObjectHideFlags: 0
