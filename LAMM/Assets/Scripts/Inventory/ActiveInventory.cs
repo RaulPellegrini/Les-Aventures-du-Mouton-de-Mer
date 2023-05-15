@@ -24,7 +24,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
         playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());         
     }
 
-    public void knightBossInventory() { invetorySlot1.SetActive(true); }
+    public void knightBossInventory() { invetorySlot1.SetActive(true);}
 
     public void EquipStartingWeapon()
     {
