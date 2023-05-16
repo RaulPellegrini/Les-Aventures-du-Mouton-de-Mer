@@ -57,6 +57,11 @@ public class EnemyPathFinder : MonoBehaviour
         moveDir = targetPosition;
     }
 
+    public void MoveAway(Vector2 targetPosition)
+    {
+        myAnimator.SetBool(WALKING_HASH, true);
+        moveDir = -targetPosition;
+    }
     public void StopMoving()
     {
         myAnimator.SetBool(WALKING_HASH, false);

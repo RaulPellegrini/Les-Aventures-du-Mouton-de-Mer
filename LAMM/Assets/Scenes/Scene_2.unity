@@ -321,6 +321,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045659249961888986, guid: 0ad3923fb0ee0a54bbcdeb6b4327362c, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007342111947026299, guid: 0ad3923fb0ee0a54bbcdeb6b4327362c, type: 3}
+      propertyPath: caiting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007342111947026299, guid: 0ad3923fb0ee0a54bbcdeb6b4327362c, type: 3}
+      propertyPath: caitingEndRange
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007342111947026299, guid: 0ad3923fb0ee0a54bbcdeb6b4327362c, type: 3}
+      propertyPath: caitingStartRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007342111947026299, guid: 0ad3923fb0ee0a54bbcdeb6b4327362c, type: 3}
+      propertyPath: stopMovingWhileAttacking
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24542,6 +24558,10 @@ PrefabInstance:
     - target: {fileID: 2159848090968511896, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159848090968511896, guid: 6c66f087b5847144c971eefc69feef00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

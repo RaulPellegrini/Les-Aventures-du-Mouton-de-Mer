@@ -8,6 +8,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackRange = 0f;
     [SerializeField] private float chasingRange = 5f;
     [SerializeField] private float chasingChangeDirFloat = .2f;
+    [SerializeField] private bool caiting = false;
+    [SerializeField] private float caitingStartRange = 0f;
+    [SerializeField] private float caitingEndRange = 0f;
+
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
@@ -33,6 +37,7 @@ public class EnemyAI : MonoBehaviour
         Chasing,
         Roaming,
         Attacking,
+        Caiting,
     }
 
     public void Awake()
@@ -67,6 +72,10 @@ public class EnemyAI : MonoBehaviour
 
             case State.Chasing:
                 Chasing();
+            break;
+
+            case State.Caiting: 
+                Caiting(); 
             break;
 
   
@@ -128,6 +137,13 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > caitingStartRange && caiting)
+        {
+            Debug.Log("caiting");
+            state = State.Caiting;
+        }
+       
+
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
         {
             state = State.Attacking;
@@ -135,6 +151,42 @@ public class EnemyAI : MonoBehaviour
         else
         { 
             state = State.Roaming;
+        }
+
+    }
+
+    private void Caiting ()
+    {
+        if (caiting)
+        {
+            Debug.Log("caiting");
+            if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < caitingStartRange)
+            {
+                timeChasing += Time.deltaTime;
+                enemyPathFinder.MoveAway(direction);
+
+                if (timeChasing > chasingChangeDirFloat)
+                {
+                    direction = GetChasingPosition();
+                }
+
+            }
+
+            if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
+            {
+                state = State.Attacking;
+            }
+            else
+            {
+                state = State.Roaming;
+            }
+
+
+
+            if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > caitingEndRange)
+            {
+                state = State.Roaming;
+            }
         }
 
     }
