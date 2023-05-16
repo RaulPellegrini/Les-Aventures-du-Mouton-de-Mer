@@ -16,7 +16,9 @@ public class Shooter : MonoBehaviour, IEnemy
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
 
-    private bool isShooting = false;
+    public bool isShooting = false;
+
+    private EnemyPathFinder enemyPathFinder;
 
     private void OnValidate()
     {
@@ -32,9 +34,16 @@ public class Shooter : MonoBehaviour, IEnemy
 
     }
 
+    private void Awake()
+    {
+        enemyPathFinder = GetComponent<EnemyPathFinder>();
+    }
+
     public void Attack ()
     {
-        if (!isShooting) {
+        if (!isShooting) 
+        {
+            
             StartCoroutine(ShootRoutine());
         }
     }
@@ -72,7 +81,7 @@ public class Shooter : MonoBehaviour, IEnemy
             for (int j = 0; j < projectilePerBurst; j++)
             {
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
-
+                SideDetection();
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
 
@@ -131,6 +140,20 @@ public class Shooter : MonoBehaviour, IEnemy
         Vector2 pos = new Vector2(x, y);
 
         return pos;
+    }
+
+    private void SideDetection()
+    {
+        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = true;
+        }
+        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = false;
+        }
     }
 
 }
