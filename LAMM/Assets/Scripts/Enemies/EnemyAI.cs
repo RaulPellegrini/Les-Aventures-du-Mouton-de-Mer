@@ -139,7 +139,6 @@ public class EnemyAI : MonoBehaviour
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > caitingStartRange && caiting)
         {
-            Debug.Log("caiting");
             state = State.Caiting;
         }
        
@@ -159,7 +158,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (caiting)
         {
-            Debug.Log("caiting");
+
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < caitingStartRange)
             {
                 timeChasing += Time.deltaTime;
