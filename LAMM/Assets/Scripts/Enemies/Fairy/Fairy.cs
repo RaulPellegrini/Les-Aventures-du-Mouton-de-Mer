@@ -9,12 +9,9 @@ public class Fairy : MonoBehaviour
     private Shooter shooter;
     private FairyBow fairyBow;
 
-    readonly int ATTACK_HASH = Animator.StringToHash("Attack");
-
     private void Awake()
     {
-        myAnimator = GetComponent<Animator>();
-        enemyPathFinder = GetComponent<EnemyPathFinder>();
+         enemyPathFinder = GetComponent<EnemyPathFinder>();
         shooter = GetComponent<Shooter>();
         fairyBow = GetComponentInChildren<FairyBow>();
 
@@ -23,15 +20,6 @@ public class Fairy : MonoBehaviour
     private void Update()
     {
         BowCheck();
-    }
-
-    private void Attack()
-    {
-        if (shooter.isShooting)
-        {
-            myAnimator.SetTrigger(ATTACK_HASH);
-        }
-
     }
 
     private void BowCheck()

@@ -18,7 +18,10 @@ public class Shooter : MonoBehaviour, IEnemy
 
     public bool isShooting = false;
 
+    readonly int ATTACK_HASH = Animator.StringToHash("Attack");
+
     private EnemyPathFinder enemyPathFinder;
+    private Animator myAnimator;
 
     private void OnValidate()
     {
@@ -37,6 +40,7 @@ public class Shooter : MonoBehaviour, IEnemy
     private void Awake()
     {
         enemyPathFinder = GetComponent<EnemyPathFinder>();
+        myAnimator = GetComponent<Animator>();
     }
 
     public void Attack ()
@@ -82,6 +86,7 @@ public class Shooter : MonoBehaviour, IEnemy
             {
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
                 SideDetection();
+                AttackAnimation();  
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
 
@@ -155,5 +160,13 @@ public class Shooter : MonoBehaviour, IEnemy
             enemyPathFinder.facingRight = false;
         }
     }
+
+    private void AttackAnimation()
+    {
+        myAnimator.SetTrigger(ATTACK_HASH);
+
+    }
+
+
 
 }

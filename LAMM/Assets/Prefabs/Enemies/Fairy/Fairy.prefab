@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 4192886022386607253}
   - component: {fileID: 4998641484335518012}
   - component: {fileID: 2939771506109995164}
+  - component: {fileID: 5994369692719223283}
   m_Layer: 0
   m_Name: Fairy
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6697941200756865302}
+  - {fileID: 2759682358525311816}
   - {fileID: 458165356040308506}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -282,11 +283,12 @@ MonoBehaviour:
   burstCount: 3
   projectilePerBurst: 1
   angleSpread: 0
-  startingDistance: 0.8
+  startingDistance: 1
   timeBetweenBursts: 1
   restTime: 1
   stagger: 1
   oscillate: 1
+  isShooting: 0
 --- !u!114 &4998641484335518012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +326,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &6566098404401177112
+--- !u!114 &5994369692719223283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045659249961888986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b759d5d2261150b47be4165f382ea783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5459096524654506774
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,8 +346,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6697941200756865302}
-  - component: {fileID: 4477036717533725207}
+  - component: {fileID: 4462478175943546146}
+  - component: {fileID: 2363019733250303905}
   m_Layer: 0
   m_Name: FairyBow
   m_TagString: Untagged
@@ -341,28 +355,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6697941200756865302
+--- !u!4 &4462478175943546146
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6566098404401177112}
+  m_GameObject: {fileID: 5459096524654506774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 262100358280657684}
+  m_Father: {fileID: 2759682358525311816}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4477036717533725207
+--- !u!212 &2363019733250303905
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6566098404401177112}
+  m_GameObject: {fileID: 5459096524654506774}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -492,3 +506,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7282146380558550655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2759682358525311816}
+  - component: {fileID: 5678234148270612807}
+  m_Layer: 0
+  m_Name: BowRotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2759682358525311816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282146380558550655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4462478175943546146}
+  m_Father: {fileID: 262100358280657684}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5678234148270612807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282146380558550655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca1e2ff80c6ae846828030ecd22a4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AimingRight: 1
