@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Fairy : MonoBehaviour
 {
-    private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
-    private Shooter shooter;
     private FairyBow fairyBow;
 
     private void Awake()
     {
-         enemyPathFinder = GetComponent<EnemyPathFinder>();
-        shooter = GetComponent<Shooter>();
+        enemyPathFinder = GetComponent<EnemyPathFinder>();
         fairyBow = GetComponentInChildren<FairyBow>();
 
     }

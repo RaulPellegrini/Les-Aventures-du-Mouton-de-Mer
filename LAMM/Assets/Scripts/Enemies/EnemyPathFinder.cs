@@ -8,6 +8,7 @@ public class EnemyPathFinder : MonoBehaviour
     [SerializeField] private bool canMove = true;
     public bool facingRight = true;
 
+
     readonly int WALKING_HASH = Animator.StringToHash("Walking");
 
     private Rigidbody2D rb;

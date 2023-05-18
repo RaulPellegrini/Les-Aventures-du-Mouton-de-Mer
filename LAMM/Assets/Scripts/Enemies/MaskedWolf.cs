@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class Knight : MonoBehaviour, IEnemy
+public class MaskedWolf : MonoBehaviour, IEnemy
 {
 
+    [SerializeField] private GameObject mushroom;
+    [SerializeField] private GameObject bag;
+    
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
 
@@ -14,7 +15,7 @@ public class Knight : MonoBehaviour, IEnemy
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
 
 
-    public void Awake()
+    private void Awake()
     {
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
@@ -24,6 +25,12 @@ public class Knight : MonoBehaviour, IEnemy
     public void Attack()
     {
         myAnimator.SetTrigger(ATTACK_HASH);
+
+    }
+
+    private void MushorromSpawn()
+    {
+        Instantiate(mushroom, bag.transform.position, Quaternion.identity);
 
         if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
         {
@@ -36,6 +43,4 @@ public class Knight : MonoBehaviour, IEnemy
             enemyPathFinder.facingRight = false;
         }
     }
-
 }
-

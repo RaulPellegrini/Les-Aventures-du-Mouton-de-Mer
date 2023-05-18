@@ -85,7 +85,7 @@ public class Shooter : MonoBehaviour, IEnemy
             for (int j = 0; j < projectilePerBurst; j++)
             {
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
-                SideDetection();
+                //SideDetection();
                 AttackAnimation();  
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
