@@ -624,7 +624,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: StopMoveEnd
+    functionName: StopMoveStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -632,6 +632,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.8888889
     functionName: MushorromSpawn
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3333334
+    functionName: StopMoveEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

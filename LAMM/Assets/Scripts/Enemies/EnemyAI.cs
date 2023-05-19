@@ -107,11 +107,8 @@ public class EnemyAI : MonoBehaviour
         }
         else 
         {
-
             state = State.Chasing; 
-        
         }
-
         
     }
 
@@ -124,6 +121,16 @@ public class EnemyAI : MonoBehaviour
             state = State.Roaming;
         }
 
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < caitingStartRange && caiting)
+        {
+            state = State.Caiting;
+        }
+
+
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange && canAttack)
+        {
+            state = State.Attacking;
+        }
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
         {
@@ -136,19 +143,8 @@ public class EnemyAI : MonoBehaviour
                 direction = GetChasingPosition();
             }
         }
-
-        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > caitingStartRange && caiting)
-        {
-            state = State.Caiting;
-        }
-       
-
-        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
-        {
-            state = State.Attacking;
-        }   
         else
-        { 
+        {
             state = State.Roaming;
         }
 
@@ -158,6 +154,10 @@ public class EnemyAI : MonoBehaviour
     {
         if (caiting)
         {
+            if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange && canAttack)
+            {
+                state = State.Attacking;
+            }
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < caitingStartRange)
             {
@@ -171,28 +171,21 @@ public class EnemyAI : MonoBehaviour
 
             }
 
-            if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
-            {
-                state = State.Attacking;
-            }
-            else
-            {
-                state = State.Roaming;
-            }
-
-
 
             if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > caitingEndRange)
             {
                 state = State.Roaming;
             }
         }
+        else
+        {
+            state = State.Roaming;
+        }
 
     }
 
     private void Attacking()
     {
-
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > attackRange)
         {
@@ -219,6 +212,7 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackCooldownRoutine()
     {
+        state = State.Roaming;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }

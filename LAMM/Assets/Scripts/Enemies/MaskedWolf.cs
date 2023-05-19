@@ -9,7 +9,7 @@ public class MaskedWolf : MonoBehaviour, IEnemy
     [SerializeField] private GameObject bag;
     
     private Animator myAnimator;
-    private EnemyPathFinder enemyPathFinder;
+    //private EnemyPathFinder enemyPathFinder;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
@@ -18,7 +18,7 @@ public class MaskedWolf : MonoBehaviour, IEnemy
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
-        enemyPathFinder = GetComponent<EnemyPathFinder>();
+        //enemyPathFinder = GetComponent<EnemyPathFinder>();
 
     }
 
@@ -31,16 +31,5 @@ public class MaskedWolf : MonoBehaviour, IEnemy
     private void MushorromSpawn()
     {
         Instantiate(mushroom, bag.transform.position, Quaternion.identity);
-
-        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
-        {
-            enemyPathFinder.Flip();
-            enemyPathFinder.facingRight = true;
-        }
-        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
-        {
-            enemyPathFinder.Flip();
-            enemyPathFinder.facingRight = false;
-        }
     }
 }

@@ -28075,7 +28075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198185534504052896, guid: f2d673987558a3b458078e542108f60d, type: 3}
       propertyPath: caitingStartRange
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2210883934156538810, guid: f2d673987558a3b458078e542108f60d, type: 3}
       propertyPath: m_RootOrder
