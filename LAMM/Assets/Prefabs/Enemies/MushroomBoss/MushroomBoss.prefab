@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 388474873755059226}
   - component: {fileID: 3247342133321239011}
   - component: {fileID: 8599828031700974827}
-  - component: {fileID: 5074265637587704837}
   - component: {fileID: 680290993554253470}
   - component: {fileID: 6829873915916998321}
+  - component: {fileID: 7336258141921399307}
   m_Layer: 0
   m_Name: MushroomBoss
   m_TagString: Untagged
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1919527412, guid: 78985f94140c14842ba2eba86e57bc23, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   caiting: 0
   caitingStartRange: 0
   caitingEndRange: 0
-  enemyType: {fileID: 5074265637587704837}
+  enemyType: {fileID: 7336258141921399307}
   attackCooldown: 2
   stopMovingWhileAttacking: 0
   guarding: 0
@@ -351,29 +351,6 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &5074265637587704837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128107234464822133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d57b08db5081e48b49609aef4a8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5431240055372261787, guid: e54646277cb45974f91553394ce577e6, type: 3}
-  bulletMoveSpeed: 8
-  burstCount: 3
-  projectilePerBurst: 6
-  angleSpread: 60
-  startingDistance: 0.3
-  timeBetweenBursts: 1
-  restTime: 1
-  stagger: 1
-  oscillate: 0
-  isShooting: 0
 --- !u!114 &680290993554253470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,3 +388,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7336258141921399307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128107234464822133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdc85ca53fb74746b2db02d77d0bdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mushroomProjectilePrefab: {fileID: 0}
