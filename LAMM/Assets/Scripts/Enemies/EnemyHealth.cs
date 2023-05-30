@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] bool knightBoss = false;
 
-
+    //Check static
 
     private Animator myAnimator;
 
@@ -54,7 +54,7 @@ public class EnemyHealth : MonoBehaviour
         DetectDeath();
     }
 
-    private void DetectDeath()
+    protected void DetectDeath()
     {
         if (currentHealth <= 0 && !Chest) 
         {

@@ -8,6 +8,8 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot2;
     [SerializeField] GameObject invetorySlot3;
 
+    private bool isTheKnightAlive = true;
+
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
 
@@ -24,7 +26,11 @@ public class ActiveInventory : Singleton<ActiveInventory>
         playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());         
     }
 
-    public void knightBossInventory() { invetorySlot1.SetActive(true);}
+    public void knightBossInventory() 
+    { 
+        invetorySlot1.SetActive(true);
+        isTheKnightAlive = false;
+    }
 
     public void EquipStartingWeapon()
     {
@@ -44,6 +50,10 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     private void ToggleActiveHightlight(int indexNum)
     {
+        if (indexNum == 2 && isTheKnightAlive)
+        {
+            return;
+        }
         activeSlotIndexNum = indexNum;
         
         foreach (Transform inventorySlot in this.transform)
@@ -58,6 +68,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     private void ChangeActiveWeapon()
      {
+
          if (ActiveWeapon.Instance.CurrentActiveWeapon != null)
          {
              Destroy(ActiveWeapon.Instance.CurrentActiveWeapon.gameObject);

@@ -8,6 +8,7 @@ public class EnemyPathFinder : MonoBehaviour
     [SerializeField] private bool canMove = true;
     public bool facingRight = true;
 
+    private VampireSword [] vampireSword;
 
     readonly int WALKING_HASH = Animator.StringToHash("Walking");
 
@@ -18,6 +19,9 @@ public class EnemyPathFinder : MonoBehaviour
 
     private void Awake()
     {
+        //Child0 the first object
+        //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
+
         knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();

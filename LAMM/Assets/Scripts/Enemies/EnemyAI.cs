@@ -8,7 +8,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackRange = 0f;
     [SerializeField] private float chasingRange = 5f;
     [SerializeField] private float chasingChangeDirFloat = .2f;
-    [SerializeField] private bool caiting = false;
     [SerializeField] private float caitingStartRange = 0f;
     [SerializeField] private float caitingEndRange = 0f;
 
@@ -16,6 +15,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
     [SerializeField] private bool guarding = false;
+
+
+    public bool caiting = false;
+    public bool chaising = false;
 
 
     private State state;
@@ -116,6 +119,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > chasingRange)
         {
+            chaising = false;
             stopRoaming = false;
             enemyPathFinder.StopMoving();
             state = State.Roaming;
@@ -123,18 +127,20 @@ public class EnemyAI : MonoBehaviour
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < caitingStartRange && caiting)
         {
+            chaising = false;
             state = State.Caiting;
         }
 
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange && canAttack)
         {
+            chaising = false;
             state = State.Attacking;
         }
 
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) <= chasingRange)
         {
-
+            chaising = true;
             timeChasing += Time.deltaTime;
             enemyPathFinder.MoveTo(direction);
 
@@ -145,6 +151,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            chaising = false;
             state = State.Roaming;
         }
 
