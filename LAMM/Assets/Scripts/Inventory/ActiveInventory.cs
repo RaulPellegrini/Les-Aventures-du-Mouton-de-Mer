@@ -8,7 +8,12 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot2;
     [SerializeField] GameObject invetorySlot3;
 
-    private bool isTheKnightAlive = true;
+    static private bool isTheKnightAlive = true;
+    //private InventorySlot[] inventorySlot;
+
+    //private VampireSword [] vampireSword;
+    //Child0 the first object
+    //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
 
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -27,8 +32,11 @@ public class ActiveInventory : Singleton<ActiveInventory>
     }
 
     public void KnightBossInventory() 
-    { 
-        invetorySlot2.SetActive(true);
+    {
+        //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
+        //invetorySlot2.SetActive(true);
+        //invetorySlot2 = childTransform.GetComponentInChildren<InventorySlot>().
+        transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
         isTheKnightAlive = false;
     }
 
