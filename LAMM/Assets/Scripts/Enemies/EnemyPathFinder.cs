@@ -8,7 +8,7 @@ public class EnemyPathFinder : MonoBehaviour
     [SerializeField] private bool canMove = true;
     public bool facingRight = true;
 
-    private VampireSword [] vampireSword;
+    //private VampireSword [] vampireSword;
 
     readonly int WALKING_HASH = Animator.StringToHash("Walking");
 

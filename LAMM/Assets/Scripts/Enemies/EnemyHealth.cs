@@ -54,7 +54,7 @@ public class EnemyHealth : MonoBehaviour
         DetectDeath();
     }
 
-    protected void DetectDeath()
+    private void DetectDeath()
     {
         if (currentHealth <= 0 && !Chest) 
         {
@@ -62,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<PickUpSpawner>().DropItems();
             Destroy(gameObject);
 
-            if (knightBoss == true) { ActiveInventory.Instance.knightBossInventory(); }
+            if (knightBoss == true) { ActiveInventory.Instance.KnightBossInventory(); }
 
 
         }
