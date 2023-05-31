@@ -5,7 +5,7 @@ using UnityEngine;
 public class Summoner : MonoBehaviour
 {
 
-    [SerializeField] private GameObject treeGuard;
+    [SerializeField] private GameObject summon;
     private Vector2 treeGuardSpawn;
     private void SpawnTreeGuard()
     {
@@ -15,7 +15,7 @@ public class Summoner : MonoBehaviour
 
         //treeGuardSpawn = Vector2.Distance(PlayerController.Instance.transform.position, transform.position);
 
-        Instantiate(treeGuard, treeGuardSpawn, Quaternion.identity);
+        //Instantiate(summon, treeGuardSpawn, Quaternion.identity);
 
     }
 }

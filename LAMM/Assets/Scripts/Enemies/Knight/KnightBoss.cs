@@ -9,7 +9,8 @@ using UnityEngine.EventSystems;
 public class KnightBoss : MonoBehaviour, IEnemy
 {
 
-    [SerializeField] GameObject secondPhaseVFX; 
+    [SerializeField] GameObject secondPhaseVFX;
+    [SerializeField] GameObject shieldDropAnim;
 
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
@@ -41,6 +42,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
     {
         secondPhaseVFX.SetActive(true);
     }
+
 
     public void Attack()
     {
