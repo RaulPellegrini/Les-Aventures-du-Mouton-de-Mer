@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Threading;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.Universal;
 
 public class KnightBoss : MonoBehaviour, IEnemy
 {
@@ -19,7 +21,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int ATTACK2_HASH = Animator.StringToHash("Attack2");
-
+    readonly int SUMMONING_HASH = Animator.StringToHash("Summoning");
 
 
     private void Awake()
@@ -32,11 +34,18 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        if (enemyHealth.halfHealth == true)
+        if (enemyHealth.halfHealth)
         {
+            if (summoner.canSummon)
+            {
+                myAnimator.SetTrigger(SUMMONING_HASH);
+                summoner.canSummon = false;
+            }
+
+            SideDetection();
             InitiateVFX();
-            summoner.Summoning();
         }
+
     }
 
     private void InitiateVFX()
