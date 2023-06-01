@@ -35,6 +35,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
         if (enemyHealth.halfHealth == true)
         {
             InitiateVFX();
+            summoner.Summoning();
         }
     }
 
@@ -49,7 +50,6 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
         if (enemyHealth.halfHealth == true)
         {
-            summoner.Summoning();
             myAnimator.SetTrigger(ATTACK2_HASH);
             SideDetection();
 

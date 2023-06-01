@@ -11,17 +11,31 @@ public class Summoner : MonoBehaviour
     [SerializeField] private GameObject summonLoc;
     [Tooltip("Number of spawn locations")]
     [SerializeField] private int numOfLoc = 2;
-    
+    [Tooltip("Number of spawn locations")]
+    [SerializeField] private int summonCooldown = 10;
+
+    private bool canSummon = true;
     private Vector3 placeToSummon;
 
     public void Summoning()
     {
-
-        for (int i = 0; i < numOfLoc; i++)
+        if (canSummon)
         {
-            placeToSummon = summonLoc.transform.GetChild(i).transform.position;
-            Instantiate(summon, placeToSummon, Quaternion.identity);
-        }
+            for (int i = 0; i < numOfLoc; i++)
+            {
+                placeToSummon = summonLoc.transform.GetChild(i).transform.position;
+                Instantiate(summon, placeToSummon, Quaternion.identity);
+                StartCoroutine(SummonCooldown());
+            }
 
+        }  
+
+    }
+
+    private IEnumerator SummonCooldown()
+    {
+        canSummon = false;
+        yield return new WaitForSeconds(summonCooldown);
+        canSummon = true;
     }
 }
