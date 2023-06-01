@@ -10,11 +10,11 @@ public class KnightBoss : MonoBehaviour, IEnemy
 {
 
     [SerializeField] GameObject secondPhaseVFX;
-    [SerializeField] GameObject shieldDropAnim;
 
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
     private EnemyHealth enemyHealth;
+    private Summoner summoner;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
@@ -27,7 +27,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         enemyHealth = GetComponent<EnemyHealth>();
-
+        summoner = GetComponent<Summoner>();
     }
 
     private void Update()
@@ -49,7 +49,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
         if (enemyHealth.halfHealth == true)
         {
-
+            summoner.Summoning();
             myAnimator.SetTrigger(ATTACK2_HASH);
             SideDetection();
 
