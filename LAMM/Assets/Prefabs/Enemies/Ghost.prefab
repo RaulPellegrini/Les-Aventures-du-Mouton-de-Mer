@@ -259,10 +259,14 @@ MonoBehaviour:
   attackRange: 8
   chasingRange: 10
   chasingChangeDirFloat: 0.2
+  caitingStartRange: 3
+  caitingEndRange: 7
   enemyType: {fileID: 3015637200284868048}
   attackCooldown: 2
   stopMovingWhileAttacking: 0
   guarding: 0
+  caiting: 1
+  chaising: 0
 --- !u!114 &2624866430686092884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +298,7 @@ MonoBehaviour:
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 15
   Chest: 0
+  knightBoss: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &4745269005486451893
@@ -369,6 +374,7 @@ MonoBehaviour:
   restTime: 1
   stagger: 1
   oscillate: 0
+  isShooting: 0
 --- !u!114 &3416801562882903179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +390,7 @@ MonoBehaviour:
   goldenCoin: {fileID: 1519313470126368310, guid: c857ff443db32854b8aad5aad6a0ade4, type: 3}
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 39557bc6dcf6ce248a871bef38d0540d, type: 3}
+  ItemDrop: 1
 --- !u!95 &2474980805836562802
 Animator:
   serializedVersion: 5

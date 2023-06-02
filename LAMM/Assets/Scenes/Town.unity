@@ -1359,7 +1359,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.305079
+      m_AnimationSpeed: 4.003799
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -10, y: 14, z: 0}
@@ -1369,7 +1369,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 4.8492947
+      m_AnimationSpeed: 4.515311
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: 14, z: 0}
@@ -1379,7 +1379,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.4023256
+      m_AnimationSpeed: 3.0548806
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -16774,6 +16774,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2248914154755861902, guid: 47795cab30644074392bdea4f8210ef8, type: 3}
   m_PrefabInstance: {fileID: 1314899829}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &545908939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6105636744197037737, guid: d376fd3b6198d0943807c15c8b0587a4, type: 3}
+  m_PrefabInstance: {fileID: 1848929902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &550125968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3646307530034606686, guid: 8f7370d7650d1174f8aa09c1f747b06f, type: 3}
@@ -25968,6 +25973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 444374461}
     - target: {fileID: 8230147079547936699, guid: 67d7b7ed4f5e8c34ebc1fbdcf1b79870, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 545908939}
+    - target: {fileID: 8230147079547936699, guid: 67d7b7ed4f5e8c34ebc1fbdcf1b79870, type: 3}
       propertyPath: transitionName
       value: North_Entrance
       objectReference: {fileID: 0}
@@ -32751,7 +32760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.172575
+      value: -2.1833801
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32838,6 +32847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 789122142382043635, guid: d376fd3b6198d0943807c15c8b0587a4, type: 3}
+      propertyPath: m_Intensity
+      value: 1.65
+      objectReference: {fileID: 0}
     - target: {fileID: 6105636744197037737, guid: d376fd3b6198d0943807c15c8b0587a4, type: 3}
       propertyPath: m_Name
       value: Player
