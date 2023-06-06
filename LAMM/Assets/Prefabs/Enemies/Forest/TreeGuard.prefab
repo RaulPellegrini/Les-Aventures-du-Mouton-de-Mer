@@ -175,13 +175,15 @@ MonoBehaviour:
   attackRange: 8
   chasingRange: 10
   chasingChangeDirFloat: 0.2
-  caiting: 0
   caitingStartRange: 0
   caitingEndRange: 0
   enemyType: {fileID: 834765746416808298}
   attackCooldown: 3
   stopMovingWhileAttacking: 1
   guarding: 1
+  selfDestroyAfterAttack: 1
+  caiting: 0
+  chaising: 0
 --- !u!114 &3860662805211956538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164a4c2ba67658a4fab2157adeae8347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 0
   canMove: 0
   facingRight: 1
 --- !u!114 &4775810187956294451
@@ -279,16 +281,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d57b08db5081e48b49609aef4a8ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5431240055372261787, guid: e54646277cb45974f91553394ce577e6, type: 3}
-  bulletMoveSpeed: 8
+  bulletPrefab: {fileID: 5431240055372261787, guid: bc960bf916a0fa447aeebcb174b53b34, type: 3}
+  bulletMoveSpeed: 4
   burstCount: 3
   projectilePerBurst: 6
-  angleSpread: 45
+  angleSpread: 20
   startingDistance: 0.3
   timeBetweenBursts: 1
   restTime: 1
-  stagger: 1
-  oscillate: 1
+  stagger: 0
+  oscillate: 0
   isShooting: 0
 --- !u!114 &8894030416623036372
 MonoBehaviour:
@@ -305,7 +307,7 @@ MonoBehaviour:
   goldenCoin: {fileID: 1519313470126368310, guid: c857ff443db32854b8aad5aad6a0ade4, type: 3}
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 39557bc6dcf6ce248a871bef38d0540d, type: 3}
-  ItemDrop: 1
+  ItemDrop: 0
 --- !u!95 &4854743178777346984
 Animator:
   serializedVersion: 5

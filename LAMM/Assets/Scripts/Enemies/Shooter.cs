@@ -47,7 +47,7 @@ public class Shooter : MonoBehaviour, IEnemy
     {
         if (!isShooting) 
         {
-            
+            SideDetection();
             StartCoroutine(ShootRoutine());
         }
     }

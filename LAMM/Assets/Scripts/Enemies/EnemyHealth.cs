@@ -72,7 +72,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
 #pragma warning disable IDE0051 // Remove unused private members
-    private void Destroy()
+    public void Destroy()
 #pragma warning restore IDE0051 // Remove unused private members
     {
         Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);

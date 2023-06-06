@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool stopMovingWhileAttacking = false;
     [SerializeField] private bool guarding = false;
 
+    [SerializeField] private bool selfDestroyAfterAttack = false;
 
     public bool caiting = false;
     public bool chaising = false;
@@ -23,7 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     private State state;
     private EnemyPathFinder enemyPathFinder;
-
+    private EnemyHealth enemyHealth;
 
     private bool stopRoaming = false;
     private bool canAttack = true;
@@ -46,6 +47,7 @@ public class EnemyAI : MonoBehaviour
     public void Awake()
     {
         enemyPathFinder = GetComponent<EnemyPathFinder>();
+        enemyHealth = GetComponent<EnemyHealth>();
         state = State.Roaming;
     }
 
@@ -219,8 +221,13 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackCooldownRoutine()
     {
+
         state = State.Roaming;
         yield return new WaitForSeconds(attackCooldown);
+        if (selfDestroyAfterAttack)
+        {
+            enemyHealth.Destroy();
+        }
         canAttack = true;
     }
 
