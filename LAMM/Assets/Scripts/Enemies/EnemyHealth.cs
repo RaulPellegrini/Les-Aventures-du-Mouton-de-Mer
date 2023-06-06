@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private bool Chest = false;
 
     [SerializeField] bool knightBoss = false;
+    [SerializeField] bool mushroomBoss = false;
+    [SerializeField] bool demonBoss = false;
 
     //Check static
 
@@ -63,6 +65,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
 
             if (knightBoss == true) { ActiveInventory.Instance.KnightBossInventory(); }
+            if (mushroomBoss == true) { ActiveInventory.Instance.MushroomBossInventory(); }
 
 
         }
