@@ -10,6 +10,7 @@ public class MushroomBoss : MonoBehaviour, IEnemy
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
     private FadeToRed fadeToRed;
+    private Summoner summoner;
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
@@ -21,6 +22,7 @@ public class MushroomBoss : MonoBehaviour, IEnemy
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         fadeToRed = GetComponent<FadeToRed>();
+        summoner = GetComponent<Summoner>();
           
     }
 
@@ -53,19 +55,18 @@ public class MushroomBoss : MonoBehaviour, IEnemy
     
     private void AnxietyDetection()
     {
-        //if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < anxietyDistance)
-        
-        if (anxious)
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < anxietyDistance)
         {
             fadeToRed.ColorChangeToFinal();
 
             if (fadeToRed.colorFinal == true)
             {
                 Summon();
+                fadeToRed.colorFinal = false;
             }
         }
 
-        else if (!anxious)
+        else
         { 
             fadeToRed.ColorChangeToStart(); 
         }
@@ -73,7 +74,12 @@ public class MushroomBoss : MonoBehaviour, IEnemy
     
     private void Summon()
     {
-        myAnimator.SetTrigger(SUMMON_HASH);
+        if (summoner.canSummon)
+        {
+            myAnimator.SetTrigger(SUMMON_HASH);
+            summoner.canSummon = false;
+        }
+
     }
 
 }

@@ -33,14 +33,6 @@ public class Summoner : MonoBehaviour
         {
             summonLoc.transform.GetChild(i).GetComponentInChildren<Light2D>().enabled = true;
                 
-             /*   
-             placeToSummon = summonLoc.transform.GetChild(i).transform.position;
-             Instantiate(lightEffect, placeToSummon, Quaternion.identity);
-
-             transform.GetChild(0).GetComponent<Light2D>().intensity = Mathf.MoveTowards(1f,4f,timer/1);
-             timer += Time.deltaTime;
-             */
-            
         } 
     }
 
@@ -49,14 +41,6 @@ public class Summoner : MonoBehaviour
         for (int i = 0; i < numOfLoc; i++)
         {
                 summonLoc.transform.GetChild(i).GetComponentInChildren<Light2D>().enabled = false;
-
-                /*   
-                placeToSummon = summonLoc.transform.GetChild(i).transform.position;
-                Instantiate(lightEffect, placeToSummon, Quaternion.identity);
-
-                transform.GetChild(0).GetComponent<Light2D>().intensity = Mathf.MoveTowards(1f,4f,timer/1);
-                timer += Time.deltaTime;
-                */
         }
     }
 
@@ -74,6 +58,7 @@ public class Summoner : MonoBehaviour
 
     private IEnumerator SummonCooldown()
     {
+        canSummon = false;
         yield return new WaitForSeconds(summonCooldown);
         canSummon = true;
     }

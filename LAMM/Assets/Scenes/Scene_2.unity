@@ -28021,61 +28021,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4710922159621232737, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: summonVFX
-      value: 
-      objectReference: {fileID: 8266023964012809901, guid: 88c30264b3947a54684e03b4a15194e7, type: 3}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: initialColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: initialColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: initialColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: initialColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: colorChangeTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: transitionalColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: transitionalColor.b
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: transitionalColor.g
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945661725777053659, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: transitionalColor.r
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 6466744506458368295, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: anxietyDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8543392729973311318, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
       propertyPath: m_Name
       value: MushroomBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 8543392729973311318, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

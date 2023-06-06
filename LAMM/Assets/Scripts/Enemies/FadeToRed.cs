@@ -7,17 +7,18 @@ public class FadeToRed : MonoBehaviour
 {
 
     [SerializeField] float colorChangeTime = 4;
-    [SerializeField] Color finalColor = Color.red;
     [SerializeField] Color initialColor;
-    [Tooltip("Lower the time, faster the change")]
+    [SerializeField] Color finalColor = Color.red;
+    [SerializeField] float colorChangeCooldown = 0f;
 
     Renderer spriteRenderer;
-
 
     private float timer = 0;
     
     public bool colorChanging = false;
     public bool colorFinal = false;
+
+    private bool canChangeColor = true;
     private bool colorSwich = false;
     /*
         private enum State
@@ -37,12 +38,12 @@ public class FadeToRed : MonoBehaviour
     private void Update()
     {
 
-        if (colorChanging)
+        if (colorChanging && canChangeColor)
         {
             ColorToFinal();
         }
 
-        else if(!colorChanging)
+        else
         {
             ColorToStart();
         }
@@ -57,8 +58,8 @@ public class FadeToRed : MonoBehaviour
 
         if (spriteRenderer.material.color == finalColor)
         {
-            initialColor = spriteRenderer.material.color;
-            timer = 0;
+            colorFinal = true;
+            StartCoroutine(ColorChangeCooldownRoutine());
             ColorChangeToStart();
 
         }
@@ -99,6 +100,13 @@ public class FadeToRed : MonoBehaviour
             colorSwich = false;
         }
 
+    }
+
+    private IEnumerator ColorChangeCooldownRoutine()
+    {
+        canChangeColor = false;
+        yield return new WaitForSeconds(colorChangeCooldown);
+        canChangeColor = true;
     }
 
 }
