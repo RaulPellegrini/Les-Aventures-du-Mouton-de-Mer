@@ -24252,90 +24252,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1366343217086111023, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_Name
-      value: Stamina Globe Image
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472492231409003754, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2809620159718798607, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_Name
-      value: Stamina Globe Image
-      objectReference: {fileID: 0}
     - target: {fileID: 3003008106874223562, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -24344,165 +24260,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197052062230982964, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 217
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 412
-      objectReference: {fileID: 0}
-    - target: {fileID: 3368075642069547211, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327120295419222711, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_Name
-      value: Stamina Globe Image
-      objectReference: {fileID: 0}
-    - target: {fileID: 5488183838518385697, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5829290165533850024, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Name
       value: UI_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981425286167605056, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016630995934734875, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6089975199562592395, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237312114518639707, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9181561930420544048, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Pivot.x
@@ -24591,37 +24351,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1867112548485749963, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1676211042}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a172961450229c4a8658613202c73ce, type: 3}
---- !u!1 &1676211041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1867112548485749963, guid: 6a172961450229c4a8658613202c73ce, type: 3}
-  m_PrefabInstance: {fileID: 1676211040}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1676211042
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676211041}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21191c25a727dbc449d6e1c19862a628, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1718491873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28042,6 +27773,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1474274097177569007, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
+      propertyPath: mushroomBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2995432509644175895, guid: 856879e2256f9f644a43ccf45e157c5a, type: 3}
       propertyPath: m_RootOrder
       value: 10
