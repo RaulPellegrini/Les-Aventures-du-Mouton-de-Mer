@@ -12,6 +12,8 @@ public class MushroomBoss : MonoBehaviour, IEnemy
     private FadeToRed fadeToRed;
     private Summoner summoner;
 
+    private SummonLocation summonLocation;
+
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
@@ -23,6 +25,8 @@ public class MushroomBoss : MonoBehaviour, IEnemy
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         fadeToRed = GetComponent<FadeToRed>();
         summoner = GetComponent<Summoner>();
+        summonLocation = GetComponentInChildren<SummonLocation>();
+
           
     }
 
@@ -39,12 +43,18 @@ public class MushroomBoss : MonoBehaviour, IEnemy
         {
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = true;
+            summonLocation.summonFacingRight = true;
+            
+
+
         }
         if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
         {
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = false;
+            summonLocation.summonFacingRight = false;
         }
+
     }
 
     public void SpawnBossMushroomProjectileAnimEvent()

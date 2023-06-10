@@ -45,7 +45,7 @@ Transform:
   - {fileID: 2759682358525311816}
   - {fileID: 458165356040308506}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &558661447050120708
 SpriteRenderer:
@@ -189,13 +189,15 @@ MonoBehaviour:
   attackRange: 8
   chasingRange: 10
   chasingChangeDirFloat: 0.2
-  caiting: 1
   caitingStartRange: 4
   caitingEndRange: 7.5
   enemyType: {fileID: 4192886022386607253}
   attackCooldown: 2
   stopMovingWhileAttacking: 0
   guarding: 0
+  selfDestroyAfterAttack: 0
+  caiting: 1
+  chaising: 0
 --- !u!114 &2473278420674705914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164a4c2ba67658a4fab2157adeae8347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2.7
   canMove: 1
   facingRight: 1
 --- !u!114 &2221111073296539930
@@ -228,6 +230,8 @@ MonoBehaviour:
   knockBackThurst: 15
   Chest: 0
   knightBoss: 0
+  mushroomBoss: 0
+  demonBoss: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &6952692700863221705
