@@ -15,7 +15,7 @@ public class Summoner : MonoBehaviour
 
     public bool canSummon = true;
     private Vector3 placeToSummon;
-
+    
     public void Summoning()
     {
         for (int i = 0; i < numOfLoc; i++)

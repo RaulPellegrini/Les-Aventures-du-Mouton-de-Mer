@@ -12,16 +12,16 @@ GameObject:
   - component: {fileID: 7866552714657972490}
   - component: {fileID: 917902130992050285}
   - component: {fileID: 6446485608480682982}
+  - component: {fileID: 1301902439709815530}
+  - component: {fileID: 6768579099714456273}
   - component: {fileID: 4508495693664652538}
   - component: {fileID: 3304919970727040875}
   - component: {fileID: 3489687747047041442}
   - component: {fileID: 1065468887816957668}
-  - component: {fileID: 4813503220490175446}
-  - component: {fileID: 1301902439709815530}
   - component: {fileID: 5216973755693421397}
-  - component: {fileID: 6768579099714456273}
+  - component: {fileID: 4813503220490175446}
   - component: {fileID: 3842862805248203794}
-  - component: {fileID: 7855251414634246153}
+  - component: {fileID: 8267730219057520662}
   m_Layer: 0
   m_Name: Vampire
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_Children:
   - {fileID: 242603412543900890}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7866552714657972490
 SpriteRenderer:
@@ -159,6 +159,39 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010395697, y: 0.077458866}
   m_Size: {x: 0.9363717, y: 0.7271382}
   m_Direction: 1
+--- !u!95 &1301902439709815530
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810147124799524226}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: beb92424cf5c3ba468abbaa86d4433e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &6768579099714456273
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810147124799524226}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!114 &4508495693664652538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,13 +208,15 @@ MonoBehaviour:
   attackRange: 2.5
   chasingRange: 10
   chasingChangeDirFloat: 0.2
-  caiting: 0
   caitingStartRange: 0
   caitingEndRange: 0
-  enemyType: {fileID: 7855251414634246153}
+  enemyType: {fileID: 8267730219057520662}
   attackCooldown: 2
   stopMovingWhileAttacking: 1
   guarding: 1
+  selfDestroyAfterAttack: 0
+  caiting: 0
+  chaising: 0
 --- !u!114 &3304919970727040875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +249,8 @@ MonoBehaviour:
   knockBackThurst: 5
   Chest: 0
   knightBoss: 0
+  mushroomBoss: 0
+  demonBoss: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &1065468887816957668
@@ -229,6 +266,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+--- !u!114 &5216973755693421397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810147124799524226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a740bcd03fd0940aad17296f9beec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4813503220490175446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,51 +292,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WhiteFlashMat: {fileID: 2100000, guid: fdca6dec41704f144ae3a3cf686edde2, type: 2}
   restoreDefaultMatTime: 0.1
---- !u!95 &1301902439709815530
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810147124799524226}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: beb92424cf5c3ba468abbaa86d4433e6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5216973755693421397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810147124799524226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28a740bcd03fd0940aad17296f9beec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!210 &6768579099714456273
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810147124799524226}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!114 &3842862805248203794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +308,7 @@ MonoBehaviour:
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 39557bc6dcf6ce248a871bef38d0540d, type: 3}
   ItemDrop: 1
---- !u!114 &7855251414634246153
+--- !u!114 &8267730219057520662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +317,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810147124799524226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb31f40bad361584791df4f3e3ed3441, type: 3}
+  m_Script: {fileID: 11500000, guid: 519cea2c78f0e8e46af643cdeeeeaa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2818848028105435555
@@ -328,6 +332,7 @@ GameObject:
   - component: {fileID: 3685276713708231059}
   - component: {fileID: 6994715843910717342}
   - component: {fileID: 4889896613294270263}
+  - component: {fileID: 2734468691096131483}
   m_Layer: 0
   m_Name: Vampire Sword
   m_TagString: Untagged
@@ -450,6 +455,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyAttack: 1
+--- !u!114 &2734468691096131483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818848028105435555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542344c888545eb468df733847dd4ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3157777161824353528
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +479,7 @@ GameObject:
   - component: {fileID: 2691816040031764034}
   - component: {fileID: 1373801576594636545}
   - component: {fileID: 3128882291287492188}
+  - component: {fileID: 4644890675853597035}
   m_Layer: 0
   m_Name: Vampire Sword
   m_TagString: Untagged
@@ -584,6 +602,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyAttack: 1
+--- !u!114 &4644890675853597035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157777161824353528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542344c888545eb468df733847dd4ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6557228047286905603
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +626,7 @@ GameObject:
   - component: {fileID: 7737335023286856937}
   - component: {fileID: 7909236024828374840}
   - component: {fileID: 1718167509589465801}
+  - component: {fileID: 8160581323520355910}
   m_Layer: 0
   m_Name: Vampire Sword
   m_TagString: Untagged
@@ -718,6 +749,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyAttack: 1
+--- !u!114 &8160581323520355910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557228047286905603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542344c888545eb468df733847dd4ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7214442891217098587
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class VampireSword : MonoBehaviour
 {
     private VampireSword vampireSword;
+    public bool enemyFacingRight = true;
 
     private void Awake()
     {
@@ -18,6 +19,8 @@ public class VampireSword : MonoBehaviour
 
     private void SwordFollowThePlayer()
     {
+
+
         Vector3 vampirePos = transform.position;
         Vector3 playerPos = PlayerController.Instance.transform.position;
 
@@ -31,5 +34,6 @@ public class VampireSword : MonoBehaviour
         {
             vampireSword.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
+
     }
 }
