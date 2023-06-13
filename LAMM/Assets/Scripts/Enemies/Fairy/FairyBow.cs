@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FairyBow : MonoBehaviour
 {
-    public bool AimingRight = true;
+    public bool aimingRight = true;
 
     private void Update()
     {
@@ -13,7 +13,7 @@ public class FairyBow : MonoBehaviour
 
     private void BowAim()
     {
-        if (AimingRight)
+        if (aimingRight)
         {
             Vector3 bowTarget = PlayerController.Instance.transform.position;
 
@@ -24,7 +24,7 @@ public class FairyBow : MonoBehaviour
 
         }
 
-        if (!AimingRight)
+        if (!aimingRight)
         {
             Vector3 bowTarget = PlayerController.Instance.transform.position;
 

@@ -4,36 +4,84 @@ using UnityEngine;
 
 public class VampireSword : MonoBehaviour
 {
-    private VampireSword vampireSword;
-    public bool enemyFacingRight = true;
+    PlayerController playerController;
+    public bool aimingRight = true;
 
     private void Awake()
     {
-        vampireSword = GetComponent<VampireSword>();
+        playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        SwordFollowThePlayer();
+        Aim();
     }
 
-    private void SwordFollowThePlayer()
+    private void Aim()
     {
 
+        float angle = Mathf.Atan2(PlayerController.Instance.transform.position.y, PlayerController.Instance.transform.position.x) * Mathf.Rad2Deg;
 
-        Vector3 vampirePos = transform.position;
-        Vector3 playerPos = PlayerController.Instance.transform.position;
+        print(angle);
 
-        float angle = Mathf.Atan2(vampirePos.y, vampirePos.x) * Mathf.Rad2Deg;
 
-        if (vampirePos.x < playerPos.x)
+        if (PlayerController.Instance.transform.position.x > transform.position.x)
         {
-            vampireSword.transform.rotation = Quaternion.Euler(0, -180, angle);
+            transform.rotation = Quaternion.Euler(0, -180, angle);
+        }
+        
+        if (PlayerController.Instance.transform.position.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+
+        /*
+        if (aimingRight)
+        {
+
+
+
+            Vector3 bowTarget = PlayerController.Instance.transform.position;
+
+            Vector2 direction = (transform.position - bowTarget)+ new Vector3(0,0,-90);
+            direction.Normalize();
+
+            transform.right = -direction;
+
+        }
+
+        if (!aimingRight)
+        {
+            Vector3 bowTarget = PlayerController.Instance.transform.position;
+
+            Vector2 direction = transform.position - bowTarget;
+            direction.Normalize();
+
+            transform.right = direction;
+
+        }
+        */
+
+    }
+    /*
+    private void MouseFollowWithOffset()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(PlayerController.Instance.transform.position);
+
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, -180, angle);
         }
         else
         {
-            vampireSword.transform.rotation = Quaternion.Euler(0, 0, angle);
+            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-
     }
+    */
+
+
 }

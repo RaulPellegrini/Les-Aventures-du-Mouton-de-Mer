@@ -23,12 +23,12 @@ public class Fairy : MonoBehaviour
     {
         if (enemyPathFinder.facingRight == true)
         {
-            fairyBow.AimingRight = true;
+            fairyBow.aimingRight = true;
         }
 
         if (enemyPathFinder.facingRight == false)
         {
-            fairyBow.AimingRight = false;
+            fairyBow.aimingRight = false;
         }
     }
 
