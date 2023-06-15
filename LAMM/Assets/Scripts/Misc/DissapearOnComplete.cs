@@ -5,9 +5,6 @@ using UnityEngine;
 public class DissapearOnComplete : MonoBehaviour
 {
     Activate activate;
-    
-    static bool levelComplete = false;
-    private int levers = 0;
 
     private void Awake()
     {
