@@ -10,6 +10,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     static private bool isTheKnightAlive = true;
     static private bool isTheMushroomAlive = true;
+    static private bool isTheDemonAlive = true;
     
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -27,7 +28,13 @@ public class ActiveInventory : Singleton<ActiveInventory>
         playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());         
     }
 
-    public void KnightBossInventory() 
+    public void MushroomBossInventory()
+    {
+        transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+        isTheMushroomAlive = false;
+    }
+
+    public void KnightBossInventory()
     {
         //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
         //invetorySlot2.SetActive(true);
@@ -36,10 +43,10 @@ public class ActiveInventory : Singleton<ActiveInventory>
         isTheKnightAlive = false;
     }
 
-    public void MushroomBossInventory()
+    public void DemonBossInventory()
     {
-        transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
-        isTheMushroomAlive = false;
+        transform.GetChild(3).GetChild(1).gameObject.SetActive(true);
+        isTheDemonAlive = false;
     }
 
     public void DropInactive()
