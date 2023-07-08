@@ -142,7 +142,7 @@ public class Shooter : MonoBehaviour, IEnemy
         float x = transform.position.x +startingDistance * Mathf.Cos(currentAngle * Mathf.Deg2Rad);
         float y = transform.position.y +startingDistance * Mathf.Sin(currentAngle * Mathf.Deg2Rad);
         
-        Vector2 pos = new Vector2(x, y);
+        Vector2 pos = new(x, y);
 
         return pos;
     }
