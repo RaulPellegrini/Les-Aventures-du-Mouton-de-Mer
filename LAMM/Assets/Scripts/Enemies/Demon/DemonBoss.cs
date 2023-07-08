@@ -29,7 +29,8 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
 
-    public bool isShooting = false;
+    public bool stopMoving = false;
+    [SerializeField] private float summonRange = 10f;
 
 
     private void Awake()
@@ -44,45 +45,52 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        if (isShooting) { enemyPathFinder.StopMoving(); }
+        if (stopMoving) { enemyPathFinder.StopMoving(); }
     }
 
     public void Attack()
     {
+        if (summoner.canSummon)
+        {
+            myAnimator.SetTrigger(SUMMON_HASH);
+        }
 
-        if (!summoner.isSummoning)
+        if (!summoner.canSummon)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
             StartCoroutine(ShootRoutine());
-        }
-
-        if (enemyHealth.halfHealth)
-        {
-            myAnimator.SetTrigger(SUMMON_HASH);
         }
 
         if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
         {
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = true;
-            summonLocation.summonFacingRight = true;
-
-
 
         }
+
         if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
         {
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = false;
-            summonLocation.summonFacingRight = false;
+
         }
 
+    }
+
+    private void StopMovingAnim()
+    {
+        stopMoving = true;
+    }
+
+    private void ContinueMovingAnim()
+    {
+        stopMoving = false;
     }
 
     //Shooter Code
     private IEnumerator ShootRoutine()
     {
-        isShooting = true;
+        stopMoving = true;
 
 
         float startAngle, currentAngle, angleStep, endAngle;
@@ -141,7 +149,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
         myAnimator.SetTrigger(ATTACKANIMSTOP_HASH);
         yield return new WaitForSeconds(restTime);
-        isShooting = false;
+        stopMoving = false;
     }
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
