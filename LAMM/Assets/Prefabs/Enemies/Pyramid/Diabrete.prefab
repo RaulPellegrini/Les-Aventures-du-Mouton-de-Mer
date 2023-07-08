@@ -308,7 +308,7 @@ Transform:
   - {fileID: 1881290677333076892}
   - {fileID: 4942010353588185319}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5697123777955949478
 SpriteRenderer:
@@ -476,7 +476,7 @@ MonoBehaviour:
   caitingStartRange: 4
   caitingEndRange: 6
   enemyType: {fileID: 382709316364032519}
-  attackCooldown: 0.5
+  attackCooldown: 2
   stopMovingWhileAttacking: 1
   guarding: 0
   selfDestroyAfterAttack: 0
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 2
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 250a81a0274f767469bccab1f0fc0a76, type: 3}
-  knockBackThurst: 15
+  knockBackThurst: 8
   Chest: 0
   knightBoss: 0
   mushroomBoss: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
   goldenCoin: {fileID: 1519313470126368310, guid: c857ff443db32854b8aad5aad6a0ade4, type: 3}
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 39557bc6dcf6ce248a871bef38d0540d, type: 3}
-  ItemDrop: 1
+  ItemDrop: 0
 --- !u!114 &382709316364032519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,4 +613,5 @@ MonoBehaviour:
     m_RotationOrder: 4
   heightY: 4.15
   popDuration: 1.3
+  shadow: {fileID: 0}
   canAttack: 1

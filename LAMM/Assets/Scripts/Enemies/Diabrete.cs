@@ -15,11 +15,15 @@ public class Diabrete : MonoBehaviour, IEnemy
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
     private EnemyAI enemyAI;
+    private Summoner summoner;
+    private EnemyHealth enemyHealth;
 
     public bool canAttack = true;
+    private bool summon = false;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
+    readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
 
     private void Awake()
@@ -27,6 +31,8 @@ public class Diabrete : MonoBehaviour, IEnemy
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         enemyAI = GetComponent<EnemyAI>();
+        summoner = GetComponent<Summoner>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     private void Start()
@@ -34,8 +40,17 @@ public class Diabrete : MonoBehaviour, IEnemy
         StartCoroutine(AnimCurveSpawnRoutine());
     }
 
+    private void Update()
+    {
+        if (enemyHealth.halfHealth)
+        {
+            myAnimator.SetTrigger(SUMMON_HASH);
+        }
+    }
+
     public void Attack()
     {
+
         if (canAttack)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
