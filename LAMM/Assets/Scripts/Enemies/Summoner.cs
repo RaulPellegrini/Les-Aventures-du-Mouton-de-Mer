@@ -13,11 +13,15 @@ public class Summoner : MonoBehaviour
 
     [SerializeField] private int summonCooldown = 10;
 
+    [SerializeField] private float timeBetweenSummons = 1.5f;
+
     public bool canSummon = true;
+    public bool isSummoning = false;
     private Vector3 placeToSummon;
     
     public void Summoning()
     {
+        isSummoning = true;
         for (int i = 0; i < numOfLoc; i++)
         {
                 placeToSummon = summonLoc.transform.GetChild(i).transform.position;
@@ -58,10 +62,17 @@ public class Summoner : MonoBehaviour
 
     private IEnumerator SummonCooldown()
     {
+        isSummoning = false;
         canSummon = false;
         yield return new WaitForSeconds(summonCooldown);
         canSummon = true;
     }
 
+    private IEnumerator TimeBetweenSummon()
+    {
+        canSummon = false;
+        yield return new WaitForSeconds(timeBetweenSummons);
+        canSummon = true;
+    }
 
 }
