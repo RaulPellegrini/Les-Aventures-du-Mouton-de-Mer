@@ -30,9 +30,6 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [SerializeField] private bool oscillate;
 
     public bool stopMoving = false;
-    [SerializeField] private float summonRange = 10f;
-
-
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();

@@ -11,6 +11,7 @@ public class Diabrete : MonoBehaviour, IEnemy
     [SerializeField] private float heightY = 1.5f;
     [SerializeField] private float popDuration = 1f;
     [SerializeField] GameObject shadow;
+    [SerializeField] private float summonInternalCD = 20f;
 
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
@@ -19,7 +20,7 @@ public class Diabrete : MonoBehaviour, IEnemy
     private EnemyHealth enemyHealth;
 
     public bool canAttack = true;
-    private bool summon = false;
+    public bool firstSummon = true;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
@@ -37,21 +38,23 @@ public class Diabrete : MonoBehaviour, IEnemy
 
     private void Start()
     {
-        StartCoroutine(AnimCurveSpawnRoutine());
+        //StartCoroutine(AnimCurveSpawnRoutine());
     }
 
     private void Update()
     {
+
         if (enemyHealth.halfHealth)
         {
-            myAnimator.SetTrigger(SUMMON_HASH);
+            Summon();
         }
+
     }
 
     public void Attack()
     {
 
-        if (canAttack)
+        if (canAttack && !summoner.isSummoning)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
 
@@ -75,6 +78,23 @@ public class Diabrete : MonoBehaviour, IEnemy
 
     }
 
+    private void Summon()
+    {
+
+        if (summoner.canSummon && !firstSummon)
+        {
+            myAnimator.SetTrigger(SUMMON_HASH);
+            summoner.canSummon = false;
+        }
+
+        if (firstSummon && enemyHealth.halfHealth)
+        {
+            StartCoroutine(SummonCooldown());
+        }
+
+
+    }
+
     private void WeaponColliderStart() 
     {
         weaponCollider.SetActive(true);
@@ -90,6 +110,18 @@ public class Diabrete : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
         enemyAI.caiting = false;
+    }
+
+    private IEnumerator SummonCooldown()
+    {
+        if(firstSummon)
+        {
+            firstSummon = false;
+            yield return new WaitForSeconds(summonInternalCD);
+            summoner.canSummon = true;
+
+        }
+
     }
 
     private IEnumerator AnimCurveSpawnRoutine()

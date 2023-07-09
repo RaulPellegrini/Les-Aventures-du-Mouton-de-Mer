@@ -82,6 +82,11 @@ public class ActiveInventory : Singleton<ActiveInventory>
             return;
         }
 
+        /*if (indexNum == 3 && isTheDemonAlive)
+        {
+            return;
+        }
+        */
         activeSlotIndexNum = indexNum;
         
         foreach (Transform inventorySlot in this.transform)

@@ -333,15 +333,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6666666
-    functionName: Summoning
+  - time: 1.6
+    functionName: StopMoveEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.6666667
-    functionName: StopMoveEnd
+  - time: 1.6666666
+    functionName: Summoning
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
