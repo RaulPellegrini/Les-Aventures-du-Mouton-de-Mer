@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 804544958548736104, guid: eacd9113584d10543b367462ea7bd3eb, type: 3}
-  weaponCooldown: 0
-  weaponDamage: 0
+  weaponCooldown: 0.5
+  weaponDamage: 1
   weaponRange: 0

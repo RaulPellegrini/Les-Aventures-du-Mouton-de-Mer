@@ -8,7 +8,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool IsDead { get; private set;}
 
-    public int maxHealth = 3;
+    public int maxHealth = 5;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private bool canDie = true;
@@ -18,7 +18,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private Slider healthSlider;
     private Knockback knockback;
     private Flash flash;
-    private bool canTakeDamage = true;
+    public bool canTakeDamage = true;
     const string HEALTH_Slider_TEXT = "Health Slider";
     const string TOWN_TEXT = "Town";
     readonly int DEATH_HASH = Animator.StringToHash("Death");
