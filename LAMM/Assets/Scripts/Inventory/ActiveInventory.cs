@@ -8,9 +8,9 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot2;
     [SerializeField] GameObject invetorySlot3;
 
+    static private bool isTheKnightAlive = true;
     static private bool isTheMushroomAlive = true;
-    static private bool isTheKnightAlive = false;
-    static private bool isTheDemonAlive = false;
+    static private bool isTheDemonAlive = true;
     
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -77,16 +77,16 @@ public class ActiveInventory : Singleton<ActiveInventory>
             return;
         }
 
-        if (indexNum == 1 && isTheMushroomAlive)
+        if (indexNum == 1  && isTheMushroomAlive)
         {
             return;
         }
 
-        if (indexNum == 3 && isTheDemonAlive)
+        /*if (indexNum == 3 && isTheDemonAlive)
         {
             return;
         }
-        
+        */
         activeSlotIndexNum = indexNum;
         
         foreach (Transform inventorySlot in this.transform)

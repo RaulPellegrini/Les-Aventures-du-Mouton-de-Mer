@@ -22,10 +22,7 @@ public class Diabrete : MonoBehaviour, IEnemy
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
-    //for the shadow
-    //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
-    //invetorySlot2.SetActive(true);
-    //invetorySlot2 = childTransform.GetComponentInChildren<InventorySlot>().
+
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();

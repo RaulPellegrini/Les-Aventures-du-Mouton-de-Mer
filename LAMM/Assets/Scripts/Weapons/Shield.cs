@@ -6,33 +6,16 @@ public class Shield : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
     private SpriteRenderer spriteRenderer;
-    private Animator myAnimator;
-    private PlayerHealth playerHealth;
-    private Transform weaponCollider;
-
-
-    readonly int ATTACK_HASH = Animator.StringToHash("Attack");
-
-    //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
 
     private void Awake()
     {
-        playerHealth = FindAnyObjectByType<PlayerHealth>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myAnimator = GetComponent<Animator>();
-
-    }
-
-    private void Start()
-    {
-        weaponCollider = PlayerController.Instance.GetWeaponCollider();
     }
 
     public void Attack()
     {
-        myAnimator.SetTrigger(ATTACK_HASH);
-        weaponCollider.gameObject.SetActive(true);
-
+        Debug.Log("Shield");
+   
     }
 
     private void Update()
@@ -46,17 +29,6 @@ public class Shield : MonoBehaviour, IWeapon
             spriteRenderer.flipY = false;
 
         }
-    }
-
-    private void DefenseStart()
-    {
-        playerHealth.canTakeDamage = false;
-    }
-
-    private void DefenseeEnd()
-    {
-        playerHealth.canTakeDamage = true;
-        weaponCollider.gameObject.SetActive(false);
     }
 
     public WeaponInfo GetWeaponInfo() { return weaponInfo; }
