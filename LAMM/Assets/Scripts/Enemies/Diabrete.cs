@@ -7,10 +7,6 @@ public class Diabrete : MonoBehaviour, IEnemy
     [SerializeField] GameObject weaponCollider;
     [SerializeField] int attackCooldown;
 
-    [SerializeField] private AnimationCurve animCurve;
-    [SerializeField] private float heightY = 1.5f;
-    [SerializeField] private float popDuration = 1f;
-    [SerializeField] GameObject shadow;
     [SerializeField] private float summonInternalCD = 20f;
 
     private Animator myAnimator;
@@ -34,11 +30,6 @@ public class Diabrete : MonoBehaviour, IEnemy
         enemyAI = GetComponent<EnemyAI>();
         summoner = GetComponent<Summoner>();
         enemyHealth = GetComponent<EnemyHealth>();
-    }
-
-    private void Start()
-    {
-        //StartCoroutine(AnimCurveSpawnRoutine());
     }
 
     private void Update()
@@ -122,29 +113,6 @@ public class Diabrete : MonoBehaviour, IEnemy
 
         }
 
-    }
-
-    private IEnumerator AnimCurveSpawnRoutine()
-    {
-        Vector2 startPoint = transform.position;
-        float randomX = transform.position.x + Random.Range(-2f, 2f);
-        float randomY = transform.position.y + Random.Range(-1f, 1f);
-
-        Vector2 endPoint = new Vector2(randomX, randomY);
-
-        float timePassed = 0f;
-
-        while (timePassed < popDuration)
-        {
-            timePassed += Time.deltaTime;
-            float linearT = timePassed / popDuration;
-            float heightT = animCurve.Evaluate(linearT);
-            float height = Mathf.Lerp(0f, heightY, heightT);
-
-            transform.position = Vector2.Lerp(startPoint, endPoint, linearT) + new Vector2(0f, height);
-
-            yield return null;
-        }
     }
 
 }

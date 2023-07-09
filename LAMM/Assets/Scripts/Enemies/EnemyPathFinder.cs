@@ -5,10 +5,8 @@ using UnityEngine;
 public class EnemyPathFinder : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private bool canMove = true;
+    private float startingMoveSpeed;
     public bool facingRight = true;
-
-
 
     readonly int WALKING_HASH = Animator.StringToHash("Walking");
 
@@ -19,17 +17,15 @@ public class EnemyPathFinder : MonoBehaviour
 
     private void Awake()
     {
-
-
         knockback = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        startingMoveSpeed = moveSpeed;
     }
 
     private void FixedUpdate()
     {
         if (knockback.GettingKnockedBack) { return; }
-        if (!canMove) { return; }
 
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
         
@@ -75,14 +71,13 @@ public class EnemyPathFinder : MonoBehaviour
     public void StopMoveStart()
     {
         myAnimator.SetBool(WALKING_HASH, false);
-
-        canMove = false;
         moveDir = Vector3.zero;
+        moveSpeed = 0;
     }
 
     public void StopMoveEnd()
     {
-        canMove = true;
+        moveSpeed = startingMoveSpeed;
     }
 
     public void Flip()

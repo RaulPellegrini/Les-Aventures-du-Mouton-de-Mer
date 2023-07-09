@@ -6,14 +6,15 @@ public class DemonBoss : MonoBehaviour, IEnemy
 {
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
-    private SummonLocation summonLocation;
-    private EnemyHealth enemyHealth;
     private Summoner summoner;
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
-    readonly int ATTACKANIMSTOP_HASH = Animator.StringToHash("StopAttackAnim");
+    readonly int STOPATTACKING_HASH = Animator.StringToHash("StopAttacking");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
+    [SerializeField] private float attackCooldown = 5f;
+
+    public bool canAttack = true;
 
     //Shooter variables
 
@@ -29,20 +30,12 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
 
-    public bool stopMoving = false;
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
-        summonLocation = GetComponent<SummonLocation>();
-        enemyHealth = GetComponent<EnemyHealth>();
         summoner = GetComponent<Summoner>();
 
-    }
-
-    private void Update()
-    {
-        if (stopMoving) { enemyPathFinder.StopMoving(); }
     }
 
     public void Attack()
@@ -52,11 +45,12 @@ public class DemonBoss : MonoBehaviour, IEnemy
             myAnimator.SetTrigger(SUMMON_HASH);
         }
 
-        if (!summoner.canSummon)
+        if (canAttack && !summoner.canSummon)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
             StartCoroutine(ShootRoutine());
         }
+
 
         if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
         {
@@ -74,22 +68,10 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
     }
 
-    private void StopMovingAnim()
-    {
-        stopMoving = true;
-    }
-
-    private void ContinueMovingAnim()
-    {
-        stopMoving = false;
-    }
-
     //Shooter Code
     private IEnumerator ShootRoutine()
     {
-        stopMoving = true;
-
-
+        canAttack = false;
         float startAngle, currentAngle, angleStep, endAngle;
         float timeBetweenProjectiles = 0f;
 
@@ -144,9 +126,9 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
         }
 
-        myAnimator.SetTrigger(ATTACKANIMSTOP_HASH);
-        yield return new WaitForSeconds(restTime);
-        stopMoving = false;
+        myAnimator.SetTrigger(STOPATTACKING_HASH);
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
