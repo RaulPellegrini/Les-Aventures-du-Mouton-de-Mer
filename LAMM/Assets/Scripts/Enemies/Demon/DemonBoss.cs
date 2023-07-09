@@ -15,6 +15,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [SerializeField] private float attackCooldown = 5f;
 
     public bool canAttack = true;
+    private bool isAttacking = false;
 
     //Shooter variables
 
@@ -40,12 +41,12 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        if (summoner.canSummon)
+        if (summoner.canSummon && !isAttacking)
         {
             myAnimator.SetTrigger(SUMMON_HASH);
         }
 
-        if (canAttack && !summoner.canSummon)
+        if (canAttack)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
             StartCoroutine(ShootRoutine());
@@ -71,6 +72,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
     //Shooter Code
     private IEnumerator ShootRoutine()
     {
+        isAttacking = true;
         canAttack = false;
         float startAngle, currentAngle, angleStep, endAngle;
         float timeBetweenProjectiles = 0f;
@@ -127,6 +129,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
         }
 
         myAnimator.SetTrigger(STOPATTACKING_HASH);
+        isAttacking = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
@@ -162,5 +165,23 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
         return pos;
     }
+
+    private void StopAttacking()
+    {
+        canAttack = false;
+    }
+
+    private void StartAttacking()
+    {
+        StartCoroutine(SecCDRoutine());
+
+    }
+
+    private IEnumerator SecCDRoutine()
+    {
+        yield return new WaitForSeconds(2);
+        canAttack = true;
+    }
+    
 
 }

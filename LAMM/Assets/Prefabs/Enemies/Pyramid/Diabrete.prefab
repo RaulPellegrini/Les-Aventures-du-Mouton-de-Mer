@@ -310,7 +310,7 @@ Transform:
   - {fileID: 4942010353588185319}
   - {fileID: 5826731187621736986}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5697123777955949478
 SpriteRenderer:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 2330948976345546098}
   attackCooldown: 5
-  summonInternalCD: 3
+  summonInternalCD: 10
   canAttack: 1
   firstSummon: 1
 --- !u!114 &2055470523671830058

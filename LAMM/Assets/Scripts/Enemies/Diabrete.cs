@@ -35,10 +35,7 @@ public class Diabrete : MonoBehaviour, IEnemy
     private void Update()
     {
 
-        if (enemyHealth.halfHealth)
-        {
-            Summon();
-        }
+        Summon();
 
     }
 
