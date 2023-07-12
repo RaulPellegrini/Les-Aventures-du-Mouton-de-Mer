@@ -43,8 +43,9 @@ Transform:
   m_Children:
   - {fileID: 1044444465018389133}
   - {fileID: 4387289339773815984}
+  - {fileID: 1730701896497144740}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7866552714657972490
 SpriteRenderer:
@@ -110,7 +111,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -176,10 +177,15 @@ MonoBehaviour:
   attackRange: 2.5
   chasingRange: 10
   chasingChangeDirFloat: 0.2
+  caitingStartRange: 0
+  caitingEndRange: 0
   enemyType: {fileID: 7855251414634246153}
   attackCooldown: 2
   stopMovingWhileAttacking: 1
   guarding: 1
+  selfDestroyAfterAttack: 0
+  caiting: 0
+  chaising: 0
 --- !u!114 &3304919970727040875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.7
-  canMove: 1
   facingRight: 1
 --- !u!114 &3489687747047041442
 MonoBehaviour:
@@ -211,6 +216,9 @@ MonoBehaviour:
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 54f99bef4d1d8154782acc459b803051, type: 3}
   knockBackThurst: 5
   Chest: 0
+  knightBoss: 0
+  mushroomBoss: 0
+  demonBoss: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &1065468887816957668
@@ -300,6 +308,7 @@ MonoBehaviour:
   goldenCoin: {fileID: 1519313470126368310, guid: c857ff443db32854b8aad5aad6a0ade4, type: 3}
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 39557bc6dcf6ce248a871bef38d0540d, type: 3}
+  ItemDrop: 1
 --- !u!114 &7855251414634246153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f40bad361584791df4f3e3ed3441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 5489164244488375224}
 --- !u!1 &2818848028105435555
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,8 +332,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4387289339773815984}
   - component: {fileID: 3685276713708231059}
-  - component: {fileID: 6994715843910717342}
-  - component: {fileID: 4889896613294270263}
   m_Layer: 0
   m_Name: Knight Sword
   m_TagString: Untagged
@@ -398,13 +406,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!70 &6994715843910717342
-CapsuleCollider2D:
+--- !u!1 &5489164244488375224
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2818848028105435555}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730701896497144740}
+  - component: {fileID: 3398806478576332458}
+  - component: {fileID: 3669935017582165006}
+  m_Layer: 0
+  m_Name: Weapon Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1730701896497144740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489164244488375224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1980295098451292785}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &3398806478576332458
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489164244488375224}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -430,16 +471,34 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05727472, y: 0.9287221}
-  m_Size: {x: 1.2938496, y: 1.8676867}
-  m_Direction: 0
---- !u!114 &4889896613294270263
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.31718862, y: 2.3800554}
+      - {x: -0.6669407, y: 1.8003287}
+      - {x: 0.64960116, y: 0.4690827}
+      - {x: 0.052477658, y: -1.1825037}
+      - {x: 1.1137062, y: -1.385937}
+      - {x: 2.0550547, y: -0.8623722}
+      - {x: 2.5796597, y: 0.68463963}
+      - {x: 1.6179969, y: 2.1764507}
+  m_UseDelaunayMesh: 0
+--- !u!114 &3669935017582165006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2818848028105435555}
+  m_GameObject: {fileID: 5489164244488375224}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Knight : MonoBehaviour, IEnemy
 {
-
+    [SerializeField] GameObject weaponCollider;
     private Animator myAnimator;
     private EnemyPathFinder enemyPathFinder;
 
@@ -35,6 +35,16 @@ public class Knight : MonoBehaviour, IEnemy
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = false;
         }
+    }
+
+    private void WeaponColliderStart()
+    {
+        weaponCollider.SetActive(true);
+    }
+
+    private void WeaponColliderStop()
+    {
+        weaponCollider.SetActive(false);
     }
 
 }
