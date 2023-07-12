@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Animator myAnimator;
 
+    public bool threeQuarterHealth = false;
     public bool halfHealth = false;
     public bool quarterHealth = false;
 
@@ -44,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= startingHealth*1/2) { halfHealth = true; }
         if (currentHealth <= startingHealth*1/4) { quarterHealth = true; }
+        if (currentHealth <= startingHealth*3/4) { threeQuarterHealth = true; }
 
         knockback.GetKnockedBack(PlayerController.Instance.transform, knockBackThurst);
         StartCoroutine(flash.FlashRoutine());

@@ -164,6 +164,106 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &3827366438788088569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2846067230095625849}
+  - component: {fileID: 5275381336131917877}
+  - component: {fileID: 6873887985631961127}
+  m_Layer: 0
+  m_Name: Weapon Collider3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2846067230095625849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827366438788088569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716952021913296552}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5275381336131917877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827366438788088569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemyAttack: 1
+--- !u!60 &6873887985631961127
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827366438788088569}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.662678, y: 5.720892}
+      - {x: 4.697483, y: 3.83747}
+      - {x: 6.277998, y: 2.2548113}
+      - {x: 7.062847, y: 0.36942208}
+      - {x: 7.18474, y: -1.3631909}
+      - {x: 8.9332905, y: -1.2333182}
+      - {x: 8.894249, y: 0.21122539}
+      - {x: 8.275652, y: 1.9342189}
+      - {x: 6.469486, y: 4.3323264}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5001616019271597668
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,8 +312,12 @@ Transform:
   - {fileID: 1202508527388562756}
   - {fileID: 1832152671563346722}
   - {fileID: 5289036138216553657}
+  - {fileID: 1295765516753121204}
+  - {fileID: 4968560434088752022}
+  - {fileID: 2846067230095625849}
+  - {fileID: 8626014762056007280}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6366267112544191002
 SpriteRenderer:
@@ -384,6 +488,7 @@ MonoBehaviour:
   attackCooldown: 2
   stopMovingWhileAttacking: 1
   guarding: 1
+  selfDestroyAfterAttack: 0
   caiting: 0
   chaising: 0
 --- !u!114 &2114103218323293570
@@ -399,7 +504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.7
-  canMove: 1
   facingRight: 1
 --- !u!114 &9207211144906397960
 MonoBehaviour:
@@ -418,6 +522,8 @@ MonoBehaviour:
   knockBackThurst: 1
   Chest: 0
   knightBoss: 1
+  mushroomBoss: 0
+  demonBoss: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &1862247086663327733
@@ -488,6 +594,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondPhaseVFX: {fileID: 8430631914870786988}
+  WeaponCollider: {fileID: 9176873139548690899}
+  WeaponCollider2: {fileID: 8343396736188638288}
+  WeaponCollider3: {fileID: 3827366438788088569}
+  WeaponCollider4: {fileID: 9179363540900529832}
 --- !u!114 &4404718810789804597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,10 +613,13 @@ MonoBehaviour:
   summon: {fileID: 2159848090968511896, guid: c644661e404af08499247fc6f70ba5c9, type: 3}
   summonLoc: {fileID: 3619961492474426104}
   summonVFX: {fileID: 8266023964012809901, guid: 92903a66bebddca48bfac3a776ad28d8, type: 3}
-  lightEffect: {fileID: 4449221257057809008, guid: 6803b0c114d0bf84ba91482cf199c927, type: 3}
   numOfLoc: 2
   summonCooldown: 10
+  waitToSummon: 0
+  timeBetweenSummons: 1.5
+  timeBetweenVFXandSummon: 0
   canSummon: 1
+  isSummoning: 0
 --- !u!1 &5114559332864437222
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,8 +741,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1202508527388562756}
   - component: {fileID: 4068698843806115116}
-  - component: {fileID: 8196009916044443159}
-  - component: {fileID: 7741060236665528645}
   m_Layer: 0
   m_Name: KnightBoss Sword
   m_TagString: Untagged
@@ -704,54 +815,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &8196009916044443159
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6284042335940405910}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05727472, y: 0.9287221}
-  m_Size: {x: 1.2938496, y: 1.8676867}
-  m_Direction: 0
---- !u!114 &7741060236665528645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6284042335940405910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnemyAttack: 1
 --- !u!1 &6361826980014085800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,8 +1073,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1832152671563346722}
   - component: {fileID: 7672505563269156306}
-  - component: {fileID: 2502220754861265291}
-  - component: {fileID: 5028621715656224542}
   m_Layer: 0
   m_Name: KnightBoss Hammer
   m_TagString: Untagged
@@ -1086,13 +1147,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2502220754861265291
-CapsuleCollider2D:
+--- !u!1 &8343396736188638288
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7307722969611285597}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4968560434088752022}
+  - component: {fileID: 6342560142625156204}
+  - component: {fileID: 3597231233809488919}
+  m_Layer: 0
+  m_Name: Weapon Collider2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4968560434088752022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343396736188638288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716952021913296552}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6342560142625156204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343396736188638288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemyAttack: 1
+--- !u!60 &3597231233809488919
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343396736188638288}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1118,22 +1225,223 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05727472, y: 0.9287221}
-  m_Size: {x: 1.2938496, y: 1.8676867}
-  m_Direction: 0
---- !u!114 &5028621715656224542
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.63011, y: 5.8753285}
+      - {x: 3.458603, y: 6.1695175}
+      - {x: 0.908658, y: 5.6742516}
+      - {x: -1.0259123, y: 4.3840723}
+      - {x: 4.6862288, y: 4.4064217}
+  m_UseDelaunayMesh: 0
+--- !u!1 &9176873139548690899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295765516753121204}
+  - component: {fileID: 7159917149014687247}
+  - component: {fileID: 1896246703372854821}
+  m_Layer: 0
+  m_Name: Weapon Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1295765516753121204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176873139548690899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716952021913296552}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7159917149014687247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7307722969611285597}
+  m_GameObject: {fileID: 9176873139548690899}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyAttack: 1
+--- !u!60 &1896246703372854821
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176873139548690899}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.5869448, y: 1.0987617}
+      - {x: 0.5900111, y: 1.672171}
+      - {x: 0.6056862, y: -0.32397568}
+      - {x: -0.8012581, y: -0.40664214}
+      - {x: -0.32746506, y: -2.1012385}
+      - {x: 1.1493049, y: -2.59312}
+      - {x: 2.7286181, y: -1.9007413}
+      - {x: 3.2474122, y: -0.70274746}
+  m_UseDelaunayMesh: 0
+--- !u!1 &9179363540900529832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8626014762056007280}
+  - component: {fileID: 6172818449358582967}
+  - component: {fileID: 7027666126718965605}
+  m_Layer: 0
+  m_Name: Weapon Collider4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8626014762056007280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179363540900529832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716952021913296552}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6172818449358582967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179363540900529832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26960279e813e024fa4a54fe048a574b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemyAttack: 1
+--- !u!60 &7027666126718965605
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179363540900529832}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.8323, y: -1.4596281}
+      - {x: 5.7250776, y: -3.5561132}
+      - {x: 2.8578472, y: -4.5772657}
+      - {x: -0.27544922, y: -3.971396}
+      - {x: -0.94781303, y: -4.967278}
+      - {x: -0.2980423, y: -6.020729}
+      - {x: 3.5308552, y: -6.2071}
+      - {x: 6.8344607, y: -4.869356}
+      - {x: 8.759398, y: -1.7992356}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &4854824096298975457
 PrefabInstance:
   m_ObjectHideFlags: 0

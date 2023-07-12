@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float roamChangeDirFloat = 2f;
-    [SerializeField] private float attackRange = 0f;
+    public float attackRange = 0f;
     [SerializeField] private float chasingRange = 5f;
     [SerializeField] private float chasingChangeDirFloat = .2f;
     [SerializeField] private float caitingStartRange = 0f;

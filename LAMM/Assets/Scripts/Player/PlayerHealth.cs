@@ -8,9 +8,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool IsDead { get; private set;}
 
-    public int maxHealth = 3;
+    public int maxHealth = 9;
     [SerializeField] private float knockBackThrustAmount = 10f;
-    [SerializeField] private float damageRecoveryTime = 1f;
+    [SerializeField] private float damageRecoveryTime = 1.5f;
     [SerializeField] private bool canDie = true;
 
     private int currentHealth;
