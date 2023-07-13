@@ -10,6 +10,7 @@ using UnityEngine.Rendering.Universal;
 
 public class KnightBoss : MonoBehaviour, IEnemy
 {
+    [SerializeField] GameObject Walls;
     [SerializeField] GameObject secondPhaseVFX;
     [SerializeField] private float secondPhaseAttackRange = 8f;
     [SerializeField] GameObject WeaponCollider;
@@ -23,6 +24,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
     private EnemyHealth enemyHealth;
     private Summoner summoner;
     private EnemyAI enemyAI;
+    private MagicWall magicWall;
 
 
     readonly int ATTACK_HASH = Animator.StringToHash("Attack");
@@ -37,6 +39,8 @@ public class KnightBoss : MonoBehaviour, IEnemy
         enemyHealth = GetComponent<EnemyHealth>();
         summoner = GetComponent<Summoner>();
         enemyAI = GetComponent<EnemyAI>();
+        magicWall = Walls.GetComponent<MagicWall>();
+        
     }
 
     private void Update()
@@ -94,6 +98,13 @@ public class KnightBoss : MonoBehaviour, IEnemy
             enemyPathFinder.Flip();
             enemyPathFinder.facingRight = false;
         }
+
+        
+    }
+
+    private void OnDestroy()
+    {
+        magicWall.WallsOff();
     }
 
     private void WeaponColliderStart()
