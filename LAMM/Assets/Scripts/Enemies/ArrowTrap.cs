@@ -24,6 +24,7 @@ public class ArrowTrap : MonoBehaviour
             {
                 arrowSpawnLocation = transform.GetChild(i).transform.position;
                 Instantiate(projectile, arrowSpawnLocation, Quaternion.identity);
+
             }
             //Instantiate(projectile);
 
