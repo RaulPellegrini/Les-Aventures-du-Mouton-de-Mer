@@ -33,8 +33,27 @@ public class Activate : MonoBehaviour
         IsActive();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+        if (other.gameObject.GetComponent<PlayerController>()|| other.gameObject.GetComponent<Projectile>())
+        {
+            animator.SetTrigger(ACTIVATE_HASH);
+            active = true;
+
+            if (lightOn)
+            {
+                transform.GetChild(0).GetComponentInChildren<Light2D>().intensity = lightIntensity;
+            }
+
+            if (leverN0) { lever0 = true; }
+            if (leverN1) { lever1 = true; }
+            if (leverN2) { lever2 = true; }
+            if (leverN3) { lever3 = true; }
+        }
+
+    }
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         animator.SetTrigger(ACTIVATE_HASH);
         active = true;
@@ -50,7 +69,7 @@ public class Activate : MonoBehaviour
         if (leverN3) {  lever3 = true; }
 
     }
-
+    */
     private void IsActive() 
     {
         if (lever0 && lever1 && lever2 && lever3)
