@@ -17,12 +17,36 @@ public class BPuzzle : MonoBehaviour
     }
     private void ButtonVeriification()
     {
-        if ( Button1.GetComponent<Button>().down && Button2.GetComponent<Button>().down && Button3.GetComponent<Button>().down && Button4.GetComponent<Button>().down)
+        
+        if(Button1.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        {
+            PuzzleReset();
+        }
+
+        if (Button2.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        {
+            PuzzleReset();
+        }
+
+        if (Button4.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        {
+            PuzzleReset();
+        }
+
+
+        if ( Button1.GetComponent<Button>().down && Button2.GetComponent<Button>().down && Button4.GetComponent<Button>().down)
         {
             Lever.SetActive(true);
         }
 
-
-
     }
+
+    private void PuzzleReset()
+    {
+        Button1.GetComponent<Button>().ButtonReset();
+        Button2.GetComponent<Button>().ButtonReset();
+        Button3.GetComponent<Button>().ButtonReset();
+        Button4.GetComponent<Button>().ButtonReset();
+    }
+
 }

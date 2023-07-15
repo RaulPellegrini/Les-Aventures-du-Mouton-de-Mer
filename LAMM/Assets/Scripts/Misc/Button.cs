@@ -30,21 +30,13 @@ public class Button : MonoBehaviour
         }
 
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-
-    }
-
     public void ButtonReset()
     {
-        StartCoroutine(ButtonResetRoutine());
+        myAnimator.SetTrigger(RESET_HASH);
     }
 
-    private IEnumerator ButtonResetRoutine()
+    private void ResetEnd()
     {
-        myAnimator.SetTrigger(RESET_HASH);
-        yield return new WaitForSeconds(resetTime);
         myAnimator.SetTrigger(UP_HASH);
         up = true;
         down = false;
