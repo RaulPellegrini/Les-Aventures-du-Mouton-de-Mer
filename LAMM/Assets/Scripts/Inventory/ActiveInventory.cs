@@ -8,9 +8,9 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot2;
     [SerializeField] GameObject invetorySlot3;
 
-    static private bool isTheKnightAlive = true;
+    static private bool isTheKnightAlive = false;
     static private bool isTheMushroomAlive = false;
-    static private bool isTheDemonAlive = true;
+    static private bool isTheDemonAlive = false;
     
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -40,7 +40,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
         //invetorySlot2.SetActive(true);
         //invetorySlot2 = childTransform.GetComponentInChildren<InventorySlot>().
         transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
-        isTheKnightAlive = false;
+        isTheDemonAlive = false;
     }
 
     public void DemonBossInventory()

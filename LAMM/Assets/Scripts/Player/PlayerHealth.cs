@@ -22,6 +22,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     const string HEALTH_Slider_TEXT = "Health Slider";
     const string TOWN_TEXT = "Town";
     readonly int DEATH_HASH = Animator.StringToHash("Death");
+    public bool shielding = false;
 
     protected override void Awake()
     {
@@ -62,7 +63,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
-        if (!canTakeDamage) { return; }
+        if (!canTakeDamage || shielding) { return; }
 
         ScreenShakeManager.Instance.ShakeScreen();
 
