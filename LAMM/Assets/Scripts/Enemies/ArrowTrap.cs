@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class ArrowTrap : MonoBehaviour
 {
 
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject arrowSpawnVFX;
-    [SerializeField] private int arrowSpeed;
-    [SerializeField] private float arrowDistance;
     [SerializeField] private Vector3 arrowDirection;
     [SerializeField] private int coolDown;
 
+
     private Vector3 arrowSpawnLocation;
 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
 
         if (other.gameObject.GetComponent<PlayerController>())
@@ -23,8 +23,12 @@ public class ArrowTrap : MonoBehaviour
             for (int i = 0; i <3; i++)
             {
                 arrowSpawnLocation = transform.GetChild(i).transform.position;
-                Instantiate(projectile, arrowSpawnLocation, Quaternion.identity);
+                GameObject newArrow = Instantiate(projectile, arrowSpawnLocation, Quaternion.identity);
+                newArrow.transform.right = newArrow.transform.position - arrowDirection;
 
+                /*GameObject newBullet = Instantiate(bulletPrefab, arrowDirection, Quaternion.identity);
+                newBullet.transform.right = newBullet.transform.position - transform.position;
+                */
             }
             //Instantiate(projectile);
 

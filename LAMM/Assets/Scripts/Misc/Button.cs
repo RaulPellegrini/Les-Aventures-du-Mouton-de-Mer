@@ -5,7 +5,6 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     private Animator myAnimator;
-    [SerializeField] private float resetTime = 2f;
 
     readonly int UP_HASH = Animator.StringToHash("Up");
     readonly int DOWN_HASH = Animator.StringToHash("Down");
