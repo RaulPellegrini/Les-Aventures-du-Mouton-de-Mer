@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45801290bad84ed43a6a05770aa57d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackButtonDown: 0
+  isAttacking: 0
 --- !u!114 &3766305347439723381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,10 +596,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c17beac08ded4c448cfded28aea40e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Town
+  sceneTransitionName: Middle_Entrance
   maxHealth: 8
   knockBackThrustAmount: 4
   damageRecoveryTime: 1
   canDie: 1
+  shielding: 0
 --- !u!114 &6858591004392904995
 MonoBehaviour:
   m_ObjectHideFlags: 0

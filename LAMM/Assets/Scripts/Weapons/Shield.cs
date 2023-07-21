@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour, IWeapon
 {
+    [SerializeField] GameObject shieldVFX;
     [SerializeField] private WeaponInfo weaponInfo;
     private SpriteRenderer spriteRenderer;
     private Animator myAnimator;
@@ -38,6 +39,7 @@ public class Shield : MonoBehaviour, IWeapon
         if (activeWeapon.attackButtonDown)
         {
             myAnimator.SetBool(DEFENDING_HASH, true);
+            Instantiate(shieldVFX, transform.position, Quaternion.identity);
         }
 
     }
@@ -69,6 +71,11 @@ public class Shield : MonoBehaviour, IWeapon
     }
 
     public WeaponInfo GetWeaponInfo() { return weaponInfo; }
+
+    private IEnumerator ShieldVFXRoutine()
+    {
+        yield return null;
+    }
 
 }
 

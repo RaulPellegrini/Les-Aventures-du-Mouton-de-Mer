@@ -310,7 +310,7 @@ Transform:
   - {fileID: 4942010353588185319}
   - {fileID: 5826731187621736986}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5697123777955949478
 SpriteRenderer:
@@ -479,7 +479,7 @@ MonoBehaviour:
   caitingEndRange: 6
   enemyType: {fileID: 382709316364032519}
   attackCooldown: 2
-  stopMovingWhileAttacking: 1
+  stopMovingWhileAttacking: 0
   guarding: 0
   selfDestroyAfterAttack: 0
   caiting: 0
@@ -510,13 +510,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2
-  deathVFXPrefab: {fileID: 8266023964012809901, guid: 250a81a0274f767469bccab1f0fc0a76, type: 3}
+  startingHealth: 3
+  deathVFXPrefab: {fileID: 8266023964012809901, guid: 69cfa3ad188406349a4287f6bb75c381, type: 3}
   knockBackThurst: 8
   Chest: 0
   knightBoss: 0
   mushroomBoss: 0
   demonBoss: 0
+  threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &5205280265237835688

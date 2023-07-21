@@ -12,7 +12,9 @@ public class DemonBoss : MonoBehaviour, IEnemy
     readonly int STOPATTACKING_HASH = Animator.StringToHash("StopAttacking");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
+    [SerializeField] GameObject portal;
     [SerializeField] private float attackCooldown = 5f;
+
 
     public bool canAttack = true;
     private bool isAttacking = false;
@@ -31,43 +33,68 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
 
+    private State state;
+
+    private enum State
+    {
+        Attacking,
+        Summoning,
+    }
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         summoner = GetComponent<Summoner>();
-
     }
 
+    private void BehaviorStateControl()
+    {
+        switch (state)
+        {
+            default:
+            case State.Summoning:
+                Summoning();
+                break;
+
+            case State.Attacking:
+                Attack();
+                break;
+
+        }
+    }
     public void Attack()
     {
-        if (summoner.canSummon && !isAttacking)
-        {
-            myAnimator.SetTrigger(SUMMON_HASH);
-        }
+
 
         if (canAttack)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
             StartCoroutine(ShootRoutine());
+            SideCheck();
         }
 
-
-        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
+        else
         {
-            enemyPathFinder.Flip();
-            enemyPathFinder.facingRight = true;
-
-        }
-
-        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
-        {
-            enemyPathFinder.Flip();
-            enemyPathFinder.facingRight = false;
-
+            state = State.Summoning;
         }
 
     }
+
+
+    private void Summoning()
+    {
+        if (summoner.canSummon && !isAttacking)
+        {
+            myAnimator.SetTrigger(SUMMON_HASH);
+            SideCheck();
+        }
+
+        else
+        {
+            state = State.Attacking;
+        }
+    }
+
 
     //Shooter Code
     private IEnumerator ShootRoutine()
@@ -166,6 +193,23 @@ public class DemonBoss : MonoBehaviour, IEnemy
         return pos;
     }
 
+    private void SideCheck()
+    {
+        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = true;
+
+        }
+
+        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = false;
+
+        }
+    }
+
     private void StopAttacking()
     {
         canAttack = false;
@@ -182,6 +226,11 @@ public class DemonBoss : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(2);
         canAttack = true;
     }
-    
+
+    private void OnDestroy()
+    {
+        portal.SetActive(true);
+    }
+
 
 }

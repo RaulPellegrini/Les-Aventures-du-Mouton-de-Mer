@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool IsDead { get; private set;}
+    [SerializeField] private string sceneToLoad;
+    [SerializeField] private string sceneTransitionName;
 
     public int maxHealth = 9;
     [SerializeField] private float knockBackThrustAmount = 10f;
@@ -96,7 +98,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
         Stamina.Instance.ReplenishStaminaOnDeath();
-        SceneManager.LoadScene(TOWN_TEXT);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private IEnumerator DamageRecoveryRoutine()

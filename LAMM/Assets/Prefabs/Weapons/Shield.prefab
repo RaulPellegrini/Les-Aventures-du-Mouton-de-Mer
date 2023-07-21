@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8432608bf8ac4b478008a51f216bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldVFX: {fileID: 446526290178789048, guid: 7c9f23c3b1cbfc44a9cdf15dc0a51027, type: 3}
   weaponInfo: {fileID: 11400000, guid: 273b3a31b64107a49b688db0887f37d3, type: 2}
 --- !u!212 &7999128015990610268
 SpriteRenderer:

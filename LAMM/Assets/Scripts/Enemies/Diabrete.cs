@@ -13,7 +13,6 @@ public class Diabrete : MonoBehaviour, IEnemy
     private EnemyPathFinder enemyPathFinder;
     private EnemyAI enemyAI;
     private Summoner summoner;
-    private EnemyHealth enemyHealth;
 
     public bool canAttack = true;
     public bool firstSummon = true;
@@ -29,7 +28,6 @@ public class Diabrete : MonoBehaviour, IEnemy
         enemyPathFinder = GetComponent<EnemyPathFinder>();
         enemyAI = GetComponent<EnemyAI>();
         summoner = GetComponent<Summoner>();
-        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     private void Update()
@@ -45,25 +43,35 @@ public class Diabrete : MonoBehaviour, IEnemy
         if (canAttack && !summoner.isSummoning)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
-
-
-            if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = true;
-            }
-            if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
-            {
-                enemyPathFinder.Flip();
-                enemyPathFinder.facingRight = false;
-            }
-
             canAttack = false;
-            enemyAI.caiting = true;
             StartCoroutine(AttackCooldown());
 
         }
 
+        SideCheck();
+
+    }
+
+    private void Caiting()
+    {
+        enemyAI.caiting = true;
+    }
+
+    private void SideCheck()
+    {
+        if (transform.position.x - PlayerController.Instance.transform.position.x < 0 && enemyPathFinder.facingRight == false)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = true;
+
+        }
+
+        if (transform.position.x - PlayerController.Instance.transform.position.x > 0 && enemyPathFinder.facingRight == true)
+        {
+            enemyPathFinder.Flip();
+            enemyPathFinder.facingRight = false;
+
+        }
     }
 
     private void Summon()
@@ -75,7 +83,7 @@ public class Diabrete : MonoBehaviour, IEnemy
             summoner.canSummon = false;
         }
 
-        if (firstSummon && enemyHealth.halfHealth)
+        if (firstSummon)
         {
             StartCoroutine(SummonCooldown());
         }
