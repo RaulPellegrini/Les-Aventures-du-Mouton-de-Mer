@@ -109,11 +109,8 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
     private void OnDestroy()
     {
-        if (!endGameEvent)
-        {
-            magicWall.WallsOff();
-        }
-
+        FindAnyObjectByType<MagicWall>().enabled = false;
+        //magicWall.WallsOff();
     }
 
     private void WeaponColliderStart()

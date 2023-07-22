@@ -31,7 +31,6 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [SerializeField] private bool stagger;
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
-    [SerializeField] private bool endGameEvent = true;
 
     private State state;
 
@@ -229,10 +228,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
     private void OnDestroy()
     {
-        if (!endGameEvent)
-        {
-            portal.SetActive(true);
-        }
+        portal.SetActive(true);
 
     }
 

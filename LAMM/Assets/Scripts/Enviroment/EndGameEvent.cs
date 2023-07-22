@@ -23,22 +23,16 @@ public class EndGameEvent : MonoBehaviour
     [SerializeField] GameObject knightSpawnPosition;
     [SerializeField] GameObject demonBoss;
     [SerializeField] GameObject demonSpawnPosition;
-    [SerializeField] float minionsSpawnTime = 10f;
-    [SerializeField] float bossSpawnTime = 20f;
+    [SerializeField] float respawnCooldownTime = 15f;
 
     private PlayerHealth playerHealth;
     private BoxCollider2D boxCollider;
-
 
     private Vector3 knightLocation;
     private Vector3 mushroomLocation;
     private Vector3 demonLocation;
 
-    private bool endGameEventStart = true;
-    private bool spawnStart = false;
-    private float initialMinionTime;
-    private float initialBossTime;
-
+  
 
     private void Awake()
     {
@@ -49,14 +43,11 @@ public class EndGameEvent : MonoBehaviour
         
         playerHealth = player.GetComponent<PlayerHealth>();
         boxCollider = GetComponent<BoxCollider2D>();
-
-        initialBossTime = bossSpawnTime;
-        initialMinionTime = minionsSpawnTime;
     }
 
     private void Update()
     {
-        HellOnEarth();
+        //HellOnEarth();
         StopEverything();
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -64,77 +55,45 @@ public class EndGameEvent : MonoBehaviour
         if (other.transform.GetComponent<PlayerController>())
         {
             Apocalipse();
+            boxCollider.enabled = false;
         }
     }
 
     private void Apocalipse()
     {
-        if (endGameEventStart)
-        {
-            endGameEventStart = false;
-            boxCollider.enabled = false;
-            bossSpawnTime = 1f;
-            minionsSpawnTime = 1f;
-            StartCoroutine(HellOnEarthEvent());
-            
-        }
-
+        StartCoroutine(BossSummonRoutine());
+        StartCoroutine(MinionsSummonRoutine());
+        StartCoroutine(BossCooldownRoutine());
     }
 
-    private void HellOnEarth()
+
+    private IEnumerator BossCooldownRoutine()
     {
-        if (spawnStart)
-        {
-            StartCoroutine(MushroomSummonRoutine());
-            StartCoroutine(KnightSummonRoutine());
-            StartCoroutine(DemonSummonRoutine());
-            StartCoroutine(MinionsSummonRoutine());
-        }
+        yield return new WaitForSeconds(respawnCooldownTime);
+        Apocalipse();
     }
 
-    private IEnumerator HellOnEarthEvent()
+    private IEnumerator BossSummonRoutine()
     {
-        bossSpawnTime = initialBossTime;
-        minionsSpawnTime = initialMinionTime;
-        yield return new WaitForSeconds(10);
-        spawnStart = true;
-
-    }
-
-    private IEnumerator MushroomSummonRoutine()
-    {
-        yield return new WaitForSeconds(bossSpawnTime);
         Instantiate(summonVFX, mushroomLocation, Quaternion.identity);
-        yield return new WaitForSeconds(1);
-        Instantiate(mushroomBoss, mushroomLocation, Quaternion.identity);
-    }
-
-    private IEnumerator KnightSummonRoutine()
-    {
-        yield return new WaitForSeconds(bossSpawnTime);
         Instantiate(summonVFX, knightLocation, Quaternion.identity);
-        yield return new WaitForSeconds(1);
-        Instantiate(knightBoss, knightLocation, Quaternion.identity);
-    }
-
-    private IEnumerator DemonSummonRoutine()
-    {
-        yield return new WaitForSeconds(bossSpawnTime);
         Instantiate(summonVFX, demonLocation, Quaternion.identity);
         yield return new WaitForSeconds(1);
-        Instantiate(demonBoss, demonLocation, Quaternion.identity);
-    }
+        Instantiate(mushroomBoss, mushroomLocation, Quaternion.identity);
+        Instantiate(knightBoss, knightLocation, Quaternion.identity);
+        Instantiate(demonBoss, demonLocation, Quaternion.identity);   
 
+    }
+   
     private IEnumerator MinionsSummonRoutine()
     {
 
-        yield return new WaitForSeconds(1);
         for (int i = 0; i < 7; i++)
         {
-            Instantiate(summonVFX,transform.GetChild(0).GetChild(i).transform.position, Quaternion.identity);
+            Instantiate(summonVFX, transform.GetChild(0).GetChild(i).transform.position, Quaternion.identity);
         }
 
-        yield return new WaitForSeconds(minionsSpawnTime);
+        yield return new WaitForSeconds(1);
         for (int i = 0; i < 7; i++)
         {
             int randomNum = Random.Range(0, 8);
@@ -163,11 +122,11 @@ public class EndGameEvent : MonoBehaviour
             {
                 Instantiate(monster6, transform.GetChild(0).GetChild(i).transform.position, Quaternion.identity);
             }
-            if(randomNum == 6)
+            if (randomNum == 6)
             {
                 Instantiate(monster7, transform.GetChild(0).GetChild(i).transform.position, Quaternion.identity);
             }
-            if(randomNum == 7)
+            if (randomNum == 7)
             {
                 Instantiate(monster8, transform.GetChild(0).GetChild(i).transform.position, Quaternion.identity);
             }

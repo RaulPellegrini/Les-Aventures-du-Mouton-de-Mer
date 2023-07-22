@@ -31453,6 +31453,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa926a5a91596fd4ba2545e6cda48e25, type: 3}
+--- !u!1 &1235039022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5001616019271597668, guid: 843c0371905501f4888e11fb218d6c0f, type: 3}
+  m_PrefabInstance: {fileID: 3375761000979044364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239458460
 GameObject:
   m_ObjectHideFlags: 0
@@ -39136,7 +39141,7 @@ Tilemap:
       - {fileID: -373527236, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 1131534023, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -801075851, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.5307155
+      m_AnimationSpeed: 3.1297913
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 3, z: 0}
@@ -39146,7 +39151,7 @@ Tilemap:
       - {fileID: -373527236, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 1131534023, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -801075851, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.097887
+      m_AnimationSpeed: 4.495573
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 4, z: 0}
@@ -39156,7 +39161,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.5714312
+      m_AnimationSpeed: 3.8158135
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 4, z: 0}
@@ -39166,7 +39171,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.760776
+      m_AnimationSpeed: 3.2587318
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -40742,7 +40747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2924624190764218938, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.598749
+      value: 13.821251
       objectReference: {fileID: 0}
     - target: {fileID: 2924624190764218938, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40750,11 +40755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.285209
+      value: 13.821251
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.041194
+      value: -5.046644
       objectReference: {fileID: 0}
     - target: {fileID: 2998681549570980513, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_RootOrder
@@ -40883,7 +40888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6980295283653866676, guid: d376fd3b6198d0943807c15c8b0587a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.29
+      value: 10.13
       objectReference: {fileID: 0}
     - target: {fileID: 6980295283653866676, guid: d376fd3b6198d0943807c15c8b0587a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -42517,6 +42522,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1855409166}
     m_Modifications:
+    - target: {fileID: 83378473357041478, guid: b59decdbef7f2e94da92c36dad7167b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043980182447353319, guid: b59decdbef7f2e94da92c36dad7167b0, type: 3}
+      propertyPath: knightBoss
+      value: 
+      objectReference: {fileID: 1235039022}
     - target: {fileID: 3397461800192603290, guid: b59decdbef7f2e94da92c36dad7167b0, type: 3}
       propertyPath: m_RootOrder
       value: -1

@@ -9,8 +9,9 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot3;
 
     static private bool isTheKnightAlive = true;
-    static private bool isTheMushroomAlive = true;
+    static private bool isTheMushroomAlive = false;
     static private bool isTheDemonAlive = false;
+    public bool endGameStarts = false;
     
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -25,7 +26,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     private void Start()
     {
-        playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());         
+        playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
     }
 
     public void MushroomBossInventory()
@@ -41,12 +42,14 @@ public class ActiveInventory : Singleton<ActiveInventory>
         //invetorySlot2 = childTransform.GetComponentInChildren<InventorySlot>().
         transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
         isTheKnightAlive = false;
+
     }
 
     public void DemonBossInventory()
     {
         transform.GetChild(3).GetChild(1).gameObject.SetActive(true);
         isTheDemonAlive = false;
+        endGameStarts = true;
     }
 
     public void DropInactive()
