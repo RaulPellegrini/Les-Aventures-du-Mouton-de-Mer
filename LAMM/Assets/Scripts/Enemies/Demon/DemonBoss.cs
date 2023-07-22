@@ -28,10 +28,10 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [SerializeField][Range(0, 359)] private float angleSpread;
     [SerializeField] private float startingDistance = 0.1f;
     [SerializeField] private float timeBetweenBursts;
-    [SerializeField] private float restTime = 1f;
     [SerializeField] private bool stagger;
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
+    [SerializeField] private bool endGameEvent = true;
 
     private State state;
 
@@ -229,7 +229,11 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
     private void OnDestroy()
     {
-        portal.SetActive(true);
+        if (!endGameEvent)
+        {
+            portal.SetActive(true);
+        }
+
     }
 
 

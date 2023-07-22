@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1580408872778399126
 Transform:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ Transform:
   - {fileID: 7978852146717430775}
   - {fileID: 1702248543238858463}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7407097672150132332
 SpriteRenderer:
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  canMove: 1
   facingRight: 1
 --- !u!114 &3331753988493078107
 MonoBehaviour:
@@ -253,6 +252,7 @@ MonoBehaviour:
   knightBoss: 0
   mushroomBoss: 0
   demonBoss: 1
+  threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
 --- !u!114 &2495163589896102674
@@ -344,6 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bef7a701100fa4b93ebfe475f0a734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 0}
+  attackCooldown: 5
+  canAttack: 1
   bulletPrefab: {fileID: 5431240055372261787, guid: f888fb702b564c741bd82f020ddd74ef, type: 3}
   bulletMoveSpeed: 8
   burstCount: 3
@@ -351,11 +354,9 @@ MonoBehaviour:
   angleSpread: 90
   startingDistance: 0.3
   timeBetweenBursts: 1
-  restTime: 0.3
   stagger: 1
   oscillate: 1
-  stopMoving: 0
-  summonRange: 10
+  endGameEvent: 1
 --- !u!1 &7993391580060468544
 GameObject:
   m_ObjectHideFlags: 0

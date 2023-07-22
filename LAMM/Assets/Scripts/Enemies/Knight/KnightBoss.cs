@@ -10,6 +10,7 @@ using UnityEngine.Rendering.Universal;
 
 public class KnightBoss : MonoBehaviour, IEnemy
 {
+    [SerializeField] bool endGameEvent = true;
     [SerializeField] GameObject Walls;
     [SerializeField] GameObject secondPhaseVFX;
     [SerializeField] private float secondPhaseAttackRange = 8f;
@@ -39,7 +40,11 @@ public class KnightBoss : MonoBehaviour, IEnemy
         enemyHealth = GetComponent<EnemyHealth>();
         summoner = GetComponent<Summoner>();
         enemyAI = GetComponent<EnemyAI>();
-        magicWall = Walls.GetComponent<MagicWall>();
+        if(!endGameEvent)
+        {
+            magicWall = Walls.GetComponent<MagicWall>();
+        }
+
         
     }
 
@@ -104,7 +109,11 @@ public class KnightBoss : MonoBehaviour, IEnemy
 
     private void OnDestroy()
     {
-        magicWall.WallsOff();
+        if (!endGameEvent)
+        {
+            magicWall.WallsOff();
+        }
+
     }
 
     private void WeaponColliderStart()
