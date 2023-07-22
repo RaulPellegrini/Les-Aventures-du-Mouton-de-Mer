@@ -11,7 +11,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
     static private bool isTheKnightAlive = true;
     static private bool isTheMushroomAlive = false;
     static private bool isTheDemonAlive = false;
-    public bool endGameStarts = false;
+    public bool endGame = false;
     
     private int activeSlotIndexNum = 0;
     private PlayerControls playerControls;
@@ -27,6 +27,10 @@ public class ActiveInventory : Singleton<ActiveInventory>
     private void Start()
     {
         playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
+        if (!isTheDemonAlive)
+        {
+            endGame = true;
+        }
     }
 
     public void MushroomBossInventory()
@@ -49,7 +53,6 @@ public class ActiveInventory : Singleton<ActiveInventory>
     {
         transform.GetChild(3).GetChild(1).gameObject.SetActive(true);
         isTheDemonAlive = false;
-        endGameStarts = true;
     }
 
     public void DropInactive()

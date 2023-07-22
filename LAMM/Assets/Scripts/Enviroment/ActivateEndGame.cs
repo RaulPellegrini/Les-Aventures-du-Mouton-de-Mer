@@ -8,17 +8,17 @@ public class ActivateEndGame : MonoBehaviour
     [SerializeField] GameObject EndGame;
 
     ActiveInventory bossCheck;
-    EndGameEvent endGameActiviate;
+
     private void Awake()
     {
         bossCheck = ActiveInventory.GetComponent<ActiveInventory>();
-        endGameActiviate = EndGame.GetComponent<EndGameEvent>();
+
     }
     private void Update()
     {
-        if (bossCheck.endGameStarts)
+        if (bossCheck.endGame)
         {
-            endGameActiviate.enabled = true;
+            EndGame.SetActive(true);
         }
     }
 }
