@@ -6,8 +6,21 @@ using UnityEngine;
 public class MagicWall : MonoBehaviour
 {
     [SerializeField] GameObject walls;
+    [SerializeField] GameObject knightBoss;
+
+    EnemyHealth health;
 
     private bool wallDone = false;
+
+    private void Awake()
+    {
+        health = knightBoss.GetComponent<EnemyHealth>();
+    }
+
+    private void Update()
+    {
+        WallsOff();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,7 +33,10 @@ public class MagicWall : MonoBehaviour
 
     public void WallsOff()
     {
+        if(health.currentHealth <= 0)
+        {
+            walls.SetActive(false);
+        }
 
-        walls.SetActive(false);
     }
 }

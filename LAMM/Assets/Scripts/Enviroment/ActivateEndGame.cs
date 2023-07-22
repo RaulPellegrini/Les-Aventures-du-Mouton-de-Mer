@@ -14,7 +14,7 @@ public class ActivateEndGame : MonoBehaviour
         bossCheck = ActiveInventory.GetComponent<ActiveInventory>();
         endGameActiviate = EndGame.GetComponent<EndGameEvent>();
     }
-    private void Start()
+    private void Update()
     {
         if (bossCheck.endGameStarts)
         {

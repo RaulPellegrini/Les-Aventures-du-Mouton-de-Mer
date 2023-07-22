@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     public bool halfHealth = false;
     public bool quarterHealth = false;
 
-    private int currentHealth;
+    public int currentHealth;
     private Knockback knockback;
     private Flash flash;
 
