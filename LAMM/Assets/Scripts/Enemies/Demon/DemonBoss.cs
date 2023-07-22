@@ -12,9 +12,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
     readonly int STOPATTACKING_HASH = Animator.StringToHash("StopAttacking");
     readonly int SUMMON_HASH = Animator.StringToHash("Summoning");
 
-    [SerializeField] GameObject portal;
     [SerializeField] private float attackCooldown = 5f;
-
 
     public bool canAttack = true;
     private bool isAttacking = false;
@@ -225,12 +223,5 @@ public class DemonBoss : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(2);
         canAttack = true;
     }
-
-    private void OnDestroy()
-    {
-        portal.SetActive(true);
-
-    }
-
 
 }
