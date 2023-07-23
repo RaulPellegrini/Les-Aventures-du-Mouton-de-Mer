@@ -5,12 +5,12 @@ using UnityEngine;
 public class BPuzzle : MonoBehaviour
 {
 
-    [SerializeField] GameObject Button1;
-    [SerializeField] GameObject Button2;
-    [SerializeField] GameObject Button3;
-    [SerializeField] GameObject Button4;
-    [SerializeField] GameObject Lever;
-    [SerializeField] GameObject LeverVFX;
+    [SerializeField] GameObject button1;
+    [SerializeField] GameObject button2;
+    [SerializeField] GameObject button3;
+    [SerializeField] GameObject button4;
+    [SerializeField] GameObject wall;
+    [SerializeField] GameObject wallVFX;
 
     private Vector3 wallPosition;
     private bool vfx = false;
@@ -21,32 +21,32 @@ public class BPuzzle : MonoBehaviour
     private void ButtonVeriification()
     {
         
-        if(Button1.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        if(button1.GetComponent<Button>().down && button3.GetComponent<Button>().down)
         {
             PuzzleReset();
         }
 
-        if (Button2.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        if (button2.GetComponent<Button>().down && button3.GetComponent<Button>().down)
         {
             PuzzleReset();
         }
 
-        if (Button4.GetComponent<Button>().down && Button3.GetComponent<Button>().down)
+        if (button4.GetComponent<Button>().down && button3.GetComponent<Button>().down)
         {
             PuzzleReset();
         }
 
 
-        if ( Button1.GetComponent<Button>().down && Button2.GetComponent<Button>().down && Button4.GetComponent<Button>().down)
+        if ( button1.GetComponent<Button>().down && button2.GetComponent<Button>().down && button4.GetComponent<Button>().down)
         {
-            Lever.SetActive(false);
+            wall.SetActive(false);
             
             if (!vfx)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    wallPosition = Lever.transform.GetChild(i).position;
-                    Instantiate(LeverVFX, wallPosition, Quaternion.identity);
+                    wallPosition = wall.transform.GetChild(i).position;
+                    Instantiate(wallVFX, wallPosition, Quaternion.identity);
 
                 }
             }
@@ -58,10 +58,10 @@ public class BPuzzle : MonoBehaviour
 
     private void PuzzleReset()
     {
-        Button1.GetComponent<Button>().ButtonReset();
-        Button2.GetComponent<Button>().ButtonReset();
-        Button3.GetComponent<Button>().ButtonReset();
-        Button4.GetComponent<Button>().ButtonReset();
+        button1.GetComponent<Button>().ButtonReset();
+        button2.GetComponent<Button>().ButtonReset();
+        button3.GetComponent<Button>().ButtonReset();
+        button4.GetComponent<Button>().ButtonReset();
     }
 
 }
