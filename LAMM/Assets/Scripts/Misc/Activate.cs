@@ -9,19 +9,21 @@ public class Activate : MonoBehaviour
     [SerializeField] bool lightOn = true;
     [SerializeField] int lightIntensity = 4;
     readonly int ACTIVATE_HASH = Animator.StringToHash("Activate");
-     public bool active = false;
+    
+    public bool pulled = false;
 
     //lever system
-
+    /*
     [SerializeField] bool leverN0;
     [SerializeField] bool leverN1;
     [SerializeField] bool leverN2;
     [SerializeField] bool leverN3;
 
-    static bool lever0 = false;
-    static bool lever1 = false;
-    static bool lever2 = false;
-    static bool lever3 = false;
+    private bool lever0 = false;
+    private bool lever1 = false;
+    private bool lever2 = false;
+    private bool lever3 = false;
+    */
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class Activate : MonoBehaviour
 
     private void Update()
     {
-        IsActive();
+        //IsActive();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,44 +41,21 @@ public class Activate : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerController>()|| other.gameObject.GetComponent<Projectile>())
         {
             animator.SetTrigger(ACTIVATE_HASH);
-            active = true;
+            pulled = true;
 
             if (lightOn)
             {
                 transform.GetChild(0).GetComponentInChildren<Light2D>().intensity = lightIntensity;
             }
-
+            /*
             if (leverN0) { lever0 = true; }
             if (leverN1) { lever1 = true; }
             if (leverN2) { lever2 = true; }
             if (leverN3) { lever3 = true; }
+            */
+
         }
 
-    }
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        animator.SetTrigger(ACTIVATE_HASH);
-        active = true;
-
-        if (lightOn)
-        {
-            transform.GetChild(0).GetComponentInChildren<Light2D>().intensity = lightIntensity;
-        }
-
-        if (leverN0) {  lever0 = true; }
-        if (leverN1) {  lever1 = true; }
-        if (leverN2) {  lever2 = true; }
-        if (leverN3) {  lever3 = true; }
-
-    }
-    */
-    private void IsActive() 
-    {
-        if (lever0 && lever1 && lever2 && lever3)
-        {
-            active = true;
-        }
-            
     }
 
 }
