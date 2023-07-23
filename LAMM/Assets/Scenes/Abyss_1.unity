@@ -46153,6 +46153,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1099511557203152130, guid: 6a172961450229c4a8658613202c73ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1366343217086111023, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Name
       value: Stamina Globe Image
@@ -46204,6 +46208,10 @@ PrefabInstance:
     - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065379098296664735, guid: 6a172961450229c4a8658613202c73ce, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2211262537659560154, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -47420,6 +47428,14 @@ PrefabInstance:
     - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: projectilePerBurst
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: demonBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: startingHealth
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: numOfLoc

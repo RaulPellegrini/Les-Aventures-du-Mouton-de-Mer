@@ -68,7 +68,7 @@ public class EnemyHealth : MonoBehaviour
 
             if (knightBoss == true) { ActiveInventory.Instance.KnightBossInventory(); }
             if (mushroomBoss == true) { ActiveInventory.Instance.MushroomBossInventory(); }
-            if (demonBoss == true) { ActiveInventory.Instance.MushroomBossInventory(); }
+            if (demonBoss == true) { ActiveInventory.Instance.DemonBossInventory(); }
 
 
         }

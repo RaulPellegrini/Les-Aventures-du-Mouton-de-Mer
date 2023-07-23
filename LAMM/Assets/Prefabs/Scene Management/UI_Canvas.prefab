@@ -91,6 +91,7 @@ MonoBehaviour:
   invetorySlot1: {fileID: 7240099719551610299}
   invetorySlot2: {fileID: 5613759115890186271}
   invetorySlot3: {fileID: 8655185860486037321}
+  endGame: 0
 --- !u!1 &1099511557203152130
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +103,7 @@ GameObject:
   - component: {fileID: 2065379098296664735}
   - component: {fileID: 2787992272738943999}
   - component: {fileID: 5337403437524755697}
+  - component: {fileID: 8373458276581683965}
   m_Layer: 5
   m_Name: Equipped Item
   m_TagString: Untagged
@@ -167,6 +169,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8373458276581683965
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099511557203152130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1f9a766487adad45a35c8c6da7c9797, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1366343217086111023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1806,7 @@ RectTransform:
   - {fileID: 5872491450235356539}
   - {fileID: 4129259321688568127}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
