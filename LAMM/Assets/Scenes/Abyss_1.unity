@@ -46155,7 +46155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1099511557203152130, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1366343217086111023, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Name
@@ -46184,6 +46184,10 @@ PrefabInstance:
     - target: {fileID: 1465520444189798944, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867112548485749963, guid: 6a172961450229c4a8658613202c73ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -46276,6 +46280,10 @@ PrefabInstance:
     - target: {fileID: 5327120295419222711, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Name
       value: Stamina Globe Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488183838518385697, guid: 6a172961450229c4a8658613202c73ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829290165533850024, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Name
@@ -46376,6 +46384,10 @@ PrefabInstance:
     - target: {fileID: 6383941689965740506, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789447941923544251, guid: 6a172961450229c4a8658613202c73ce, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9181561930420544048, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_Pivot.x
