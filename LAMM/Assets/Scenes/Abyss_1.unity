@@ -47377,10 +47377,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 481311042385449360, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 1580408872778399126, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -47425,6 +47428,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 2737493885412681654, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.59242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737493885412681654, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.59242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737493885412681654, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.010395763
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737493885412681654, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.35518155
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: canSummon
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,6 +73,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
 
         else
         {
+            Console.WriteLine("summoning");
             state = State.Summoning;
         }
 
