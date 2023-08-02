@@ -47377,7 +47377,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
-    - target: {fileID: 481311042385449360, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+    - target: {fileID: 299884761749441653, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -47424,6 +47424,46 @@ PrefabInstance:
     - target: {fileID: 1580408872778399126, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 1362969359}
+    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: restTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: stopMoving
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: projectilePerBurst
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: demonBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: startingHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: numOfLoc
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: canSummon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: summonCooldown
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
+      propertyPath: timeBetweenSummons
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -45,7 +45,7 @@ Transform:
   - {fileID: 7978852146717430775}
   - {fileID: 1702248543238858463}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7407097672150132332
 SpriteRenderer:
@@ -255,7 +255,6 @@ MonoBehaviour:
   threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
-  currentHealth: 0
 --- !u!114 &2495163589896102674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,10 +325,10 @@ MonoBehaviour:
   summon: {fileID: 7106368257531956148, guid: f0a71e3f6cb6a6e4085151270f512ffd, type: 3}
   summonLoc: {fileID: 7837771417422899358}
   summonVFX: {fileID: 8266023964012809901, guid: 1a86b719642f56b4b8a4d32c96ca3cbd, type: 3}
-  numOfLoc: 3
-  summonCooldown: 8
+  numOfLoc: 4
+  summonCooldown: 10
   waitToSummon: 1
-  timeBetweenSummons: 1.2
+  timeBetweenSummons: 1.5
   timeBetweenVFXandSummon: 0.5
   canSummon: 1
   isSummoning: 0
@@ -345,17 +344,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bef7a701100fa4b93ebfe475f0a734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 0}
   attackCooldown: 5
   canAttack: 1
   bulletPrefab: {fileID: 5431240055372261787, guid: f888fb702b564c741bd82f020ddd74ef, type: 3}
   bulletMoveSpeed: 8
   burstCount: 3
-  projectilePerBurst: 6
+  projectilePerBurst: 8
   angleSpread: 90
   startingDistance: 0.3
   timeBetweenBursts: 1
   stagger: 1
   oscillate: 1
+  endGameEvent: 1
 --- !u!1 &7993391580060468544
 GameObject:
   m_ObjectHideFlags: 0
