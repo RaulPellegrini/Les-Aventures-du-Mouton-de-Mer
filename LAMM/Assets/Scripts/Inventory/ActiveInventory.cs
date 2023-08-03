@@ -41,9 +41,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     public void KnightBossInventory()
     {
-        //vampireSword = transform.GetChild(0).GetComponentsInChildren<VampireSword>();
-        //invetorySlot2.SetActive(true);
-        //invetorySlot2 = childTransform.GetComponentInChildren<InventorySlot>().
+
         transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
         isTheKnightAlive = false;
 

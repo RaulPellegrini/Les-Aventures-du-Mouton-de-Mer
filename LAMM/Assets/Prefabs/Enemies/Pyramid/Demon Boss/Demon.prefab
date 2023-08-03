@@ -45,7 +45,7 @@ Transform:
   - {fileID: 7978852146717430775}
   - {fileID: 1702248543238858463}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7407097672150132332
 SpriteRenderer:
@@ -158,9 +158,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010395697, y: 0.077458866}
-  m_Size: {x: 0.9363717, y: 0.7271382}
-  m_Direction: 1
+  m_Offset: {x: 0.0061435644, y: -0.2367972}
+  m_Size: {x: 1.0579331, y: 1.620287}
+  m_Direction: 0
 --- !u!210 &310800791950294918
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 25
+  startingHealth: 20
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 0.01
   Chest: 0
@@ -255,6 +255,7 @@ MonoBehaviour:
   threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
+  currentHealth: 0
 --- !u!114 &2495163589896102674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,10 +326,10 @@ MonoBehaviour:
   summon: {fileID: 7106368257531956148, guid: f0a71e3f6cb6a6e4085151270f512ffd, type: 3}
   summonLoc: {fileID: 7837771417422899358}
   summonVFX: {fileID: 8266023964012809901, guid: 1a86b719642f56b4b8a4d32c96ca3cbd, type: 3}
-  numOfLoc: 4
-  summonCooldown: 10
+  numOfLoc: 3
+  summonCooldown: 16
   waitToSummon: 1
-  timeBetweenSummons: 1.5
+  timeBetweenSummons: 1.2
   timeBetweenVFXandSummon: 0.5
   canSummon: 1
   isSummoning: 0
@@ -344,19 +345,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bef7a701100fa4b93ebfe475f0a734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portal: {fileID: 0}
   attackCooldown: 5
   canAttack: 1
   bulletPrefab: {fileID: 5431240055372261787, guid: f888fb702b564c741bd82f020ddd74ef, type: 3}
   bulletMoveSpeed: 8
   burstCount: 3
-  projectilePerBurst: 8
+  projectilePerBurst: 6
   angleSpread: 90
   startingDistance: 0.3
   timeBetweenBursts: 1
   stagger: 1
   oscillate: 1
-  endGameEvent: 1
 --- !u!1 &7993391580060468544
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1948876952564108055, guid: 0d01795f7824eb5429189951495f5780, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8170483032330842649, guid: 0d01795f7824eb5429189951495f5780, type: 3}
       propertyPath: m_Name
@@ -503,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8656863537607110581, guid: 0d01795f7824eb5429189951495f5780, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

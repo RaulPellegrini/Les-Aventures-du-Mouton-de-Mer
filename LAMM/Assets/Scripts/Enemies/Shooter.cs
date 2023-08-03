@@ -15,6 +15,8 @@ public class Shooter : MonoBehaviour, IEnemy
     [SerializeField] private bool stagger;
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
+    [SerializeField] private bool waitBeforeShot = false;
+    [SerializeField] private int waitBeforeShotTime = 2;
 
     public bool isShooting = false;
 
@@ -45,11 +47,22 @@ public class Shooter : MonoBehaviour, IEnemy
 
     public void Attack ()
     {
+        if (waitBeforeShot)
+        {
+            StartCoroutine(WaitBeforeShotRoutine());
+            return;
+        }
         if (!isShooting) 
         {
             SideDetection();
             StartCoroutine(ShootRoutine());
         }
+    }
+
+    private IEnumerator WaitBeforeShotRoutine()
+    {
+        yield return new WaitForSeconds(waitBeforeShotTime);
+        waitBeforeShot = false;
     }
 
     private IEnumerator ShootRoutine()

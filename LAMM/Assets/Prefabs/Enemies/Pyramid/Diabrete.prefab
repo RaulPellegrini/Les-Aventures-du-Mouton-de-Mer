@@ -77,10 +77,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2553472, y: 1.2993476}
-      - {x: 0.6366239, y: -1.2951796}
-      - {x: 1.6321331, y: -1.29518}
-      - {x: 1.632133, y: 0.74116135}
+    - - {x: 0.7615871, y: 0.9040791}
+      - {x: 0.6826454, y: -1.2491577}
+      - {x: 2.1153626, y: -1.2491583}
+      - {x: 2.2764392, y: 0.8792268}
   m_UseDelaunayMesh: 0
 --- !u!114 &3488750850463347480
 MonoBehaviour:
@@ -310,7 +310,7 @@ Transform:
   - {fileID: 4942010353588185319}
   - {fileID: 5826731187621736986}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5697123777955949478
 SpriteRenderer:
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 1.9
+  attackRange: 2.5
   chasingRange: 10
   chasingChangeDirFloat: 0.2
   caitingStartRange: 4
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164a4c2ba67658a4fab2157adeae8347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   facingRight: 1
 --- !u!114 &7746913484946026942
 MonoBehaviour:
@@ -520,6 +520,7 @@ MonoBehaviour:
   threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
+  currentHealth: 0
 --- !u!114 &5205280265237835688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 2330948976345546098}
   attackCooldown: 5
-  summonInternalCD: 10
+  summonInternalCD: 5
   canAttack: 1
   firstSummon: 1
 --- !u!114 &2055470523671830058

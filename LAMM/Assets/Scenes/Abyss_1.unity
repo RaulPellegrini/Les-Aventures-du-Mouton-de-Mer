@@ -259,7 +259,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -16.43955, y: -7.0514984}
+  m_Offset: {x: -23.65473, y: -7.209841}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -270,7 +270,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.671154, y: 53.06894}
+  m_Size: {x: 0.8386345, y: 60.35261}
   m_EdgeRadius: 0
 --- !u!4 &167865280 stripped
 Transform:
@@ -46187,7 +46187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1867112548485749963, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2024208658761489168, guid: 6a172961450229c4a8658613202c73ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -46559,7 +46559,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 42.015175, y: -7.227009}
+  m_Offset: {x: 45.340324, y: -7.0686703}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -46570,7 +46570,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2927856, y: 54.145004}
+  m_Size: {x: 0.97610474, y: 59.845264}
   m_EdgeRadius: 0
 --- !u!1 &1813459939
 GameObject:
@@ -46653,7 +46653,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 13.221334, y: -32.72184}
+  m_Offset: {x: 10.687881, y: -37.313717}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -46664,7 +46664,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64.43605, y: 1.8747406}
+  m_Size: {x: 69.50296, y: 0.9247055}
   m_EdgeRadius: 0
 --- !u!1 &1832934280
 GameObject:
@@ -47010,7 +47010,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 12.282839, y: 17.29312}
+  m_Offset: {x: 11.174452, y: 22.6767}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -47021,7 +47021,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64.916275, y: 2.1072273}
+  m_Size: {x: 69.03313, y: 1.1571808}
   m_EdgeRadius: 0
 --- !u!1 &2074518894
 GameObject:
@@ -47377,10 +47377,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
-    - target: {fileID: 299884761749441653, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1580408872778399126, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -47424,46 +47420,6 @@ PrefabInstance:
     - target: {fileID: 1580408872778399126, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: portal
-      value: 
-      objectReference: {fileID: 1362969359}
-    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: restTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: stopMoving
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225943555565649239, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: projectilePerBurst
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: demonBoss
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331753988493078107, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: startingHealth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: numOfLoc
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: canSummon
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: summonCooldown
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371412589986690695, guid: cf31c34224696ce4fb86338b56fca54e, type: 3}
-      propertyPath: timeBetweenSummons
-      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

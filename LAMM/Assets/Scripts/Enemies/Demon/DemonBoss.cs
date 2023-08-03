@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,13 +31,7 @@ public class DemonBoss : MonoBehaviour, IEnemy
     [Tooltip("Stagger has to be enable for oscillate to work properly.")]
     [SerializeField] private bool oscillate;
 
-    private State state;
 
-    private enum State
-    {
-        Attacking,
-        Summoning,
-    }
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -44,52 +39,23 @@ public class DemonBoss : MonoBehaviour, IEnemy
         summoner = GetComponent<Summoner>();
     }
 
-    private void BehaviorStateControl()
-    {
-        switch (state)
-        {
-            default:
-            case State.Summoning:
-                Summoning();
-                break;
-
-            case State.Attacking:
-                Attack();
-                break;
-
-        }
-    }
     public void Attack()
     {
 
-
-        if (canAttack)
+        if (canAttack && !summoner.isSummoning)
         {
             myAnimator.SetTrigger(ATTACK_HASH);
             StartCoroutine(ShootRoutine());
             SideCheck();
+
         }
 
-        else
-        {
-            state = State.Summoning;
-        }
-
-    }
-
-
-    private void Summoning()
-    {
         if (summoner.canSummon && !isAttacking)
         {
             myAnimator.SetTrigger(SUMMON_HASH);
             SideCheck();
         }
 
-        else
-        {
-            state = State.Attacking;
-        }
     }
 
 
