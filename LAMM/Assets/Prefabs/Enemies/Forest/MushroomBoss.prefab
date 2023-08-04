@@ -271,16 +271,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 8
-  chasingRange: 10
+  attackRange: 10
+  chasingRange: 12
   chasingChangeDirFloat: 0.2
   caitingStartRange: 5
   caitingEndRange: 7
   enemyType: {fileID: 6466744506458368295}
-  attackCooldown: 2
+  attackCooldown: 1
   stopMovingWhileAttacking: 1
   guarding: 1
-  selfDestroyAfterAttack: 0
+  selfDestroy: 0
+  selfDestroyTime: 10
   caiting: 1
   chaising: 0
 --- !u!114 &3833445423939615755
@@ -309,15 +310,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 20
+  startingHealth: 30
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 5
   Chest: 0
   knightBoss: 0
   mushroomBoss: 1
   demonBoss: 0
+  threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
+  currentHealth: 0
 --- !u!114 &2908876951428988364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mushroomProjectilePrefab: {fileID: 46179996946784118, guid: 8fed951e23601a94da985c16e9dbc0e8, type: 3}
-  anxietyDistance: 7
+  anxietyDistance: 8
   anxious: 0
 --- !u!114 &5945661725777053659
 MonoBehaviour:
