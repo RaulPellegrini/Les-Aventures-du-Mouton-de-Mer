@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2127346349122551846
 SpriteRenderer:
@@ -107,8 +107,13 @@ MonoBehaviour:
   deathVFXPrefab: {fileID: 8266023964012809901, guid: fbca2fe79d8b1a74b9c6b0e66d6b796f, type: 3}
   knockBackThurst: 1
   Chest: 1
+  knightBoss: 0
+  mushroomBoss: 0
+  demonBoss: 0
+  threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
+  currentHealth: 0
 --- !u!95 &2620494543694710799
 Animator:
   serializedVersion: 5
@@ -145,6 +150,7 @@ MonoBehaviour:
   goldenCoin: {fileID: 1519313470126368310, guid: c857ff443db32854b8aad5aad6a0ade4, type: 3}
   healthGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
   staminaGlobe: {fileID: 1519313470126368310, guid: 70e079d4b78f2a44f8524225619fbaa6, type: 3}
+  ItemDrop: 1
 --- !u!50 &4411025168441141256
 Rigidbody2D:
   serializedVersion: 4
@@ -153,7 +159,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2509577532437193064}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -171,7 +177,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &5765170982005261127
 MonoBehaviour:
   m_ObjectHideFlags: 0

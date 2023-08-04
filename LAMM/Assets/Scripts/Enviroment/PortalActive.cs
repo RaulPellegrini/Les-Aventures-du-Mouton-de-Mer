@@ -17,6 +17,11 @@ public class PortalActive : MonoBehaviour
 
     private void Update()
     {
+        if(health.currentHealth>0)
+        {
+            //portal.transform.position = demon.transform.position;
+        }
+
         PortalCheck();
     }
 

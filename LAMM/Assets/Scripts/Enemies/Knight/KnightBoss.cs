@@ -73,7 +73,7 @@ public class KnightBoss : MonoBehaviour, IEnemy
     public void Attack()
     {
 
-        if (enemyHealth.halfHealth == true)
+        if (enemyHealth.halfHealth == true && transform.position.x - PlayerController.Instance.transform.position.x > 5)
         {
             myAnimator.SetTrigger(ATTACK2_HASH);
             SideDetection();

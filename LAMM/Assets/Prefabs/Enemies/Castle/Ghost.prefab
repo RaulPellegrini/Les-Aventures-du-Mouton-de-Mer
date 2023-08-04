@@ -127,7 +127,7 @@ Transform:
   m_Children:
   - {fileID: 7257387585597312836}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4680348000508083491
 SpriteRenderer:
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 2
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 15
   Chest: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
   threeQuarterHealth: 0
   halfHealth: 0
   quarterHealth: 0
+  currentHealth: 0
 --- !u!114 &4745269005486451893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,8 +369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5431240055372261787, guid: e54646277cb45974f91553394ce577e6, type: 3}
-  bulletMoveSpeed: 6
-  burstCount: 3
+  bulletMoveSpeed: 5
+  burstCount: 2
   projectilePerBurst: 4
   angleSpread: 50
   startingDistance: 0.3
@@ -377,6 +378,8 @@ MonoBehaviour:
   restTime: 1.5
   stagger: 1
   oscillate: 0
+  waitBeforeShot: 0
+  waitBeforeShotTime: 2
   isShooting: 0
 --- !u!114 &3416801562882903179
 MonoBehaviour:

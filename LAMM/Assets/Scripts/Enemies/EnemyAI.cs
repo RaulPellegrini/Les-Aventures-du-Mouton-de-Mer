@@ -16,7 +16,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool stopMovingWhileAttacking = false;
     [SerializeField] private bool guarding = false;
 
-    [SerializeField] private bool selfDestroyAfterAttack = false;
+    [SerializeField] private bool selfDestroy = false;
+    [SerializeField] private int selfDestroyTime = 10;
 
     public bool caiting = false;
     public bool chaising = false;
@@ -54,6 +55,10 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         roamPosition = GetRoamingPosition();
+        if (selfDestroy)
+        {
+            StartCoroutine(SelfDestroy());
+        }
 
     }
 
@@ -224,11 +229,16 @@ public class EnemyAI : MonoBehaviour
 
         state = State.Roaming;
         yield return new WaitForSeconds(attackCooldown);
-        if (selfDestroyAfterAttack)
-        {
-            enemyHealth.Destroy();
-        }
+
         canAttack = true;
+    }
+
+    private IEnumerator SelfDestroy()
+    {
+
+        yield return new WaitForSeconds(selfDestroyTime);
+        enemyHealth.Destroy();
+  
     }
 
     private Vector2 GetRoamingPosition()

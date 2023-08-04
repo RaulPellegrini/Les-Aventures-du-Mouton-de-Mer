@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164a4c2ba67658a4fab2157adeae8347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   facingRight: 1
 --- !u!114 &7746913484946026942
 MonoBehaviour:
@@ -609,7 +609,7 @@ MonoBehaviour:
   summonLoc: {fileID: 3136322493447158875}
   summonVFX: {fileID: 8266023964012809901, guid: 1a86b719642f56b4b8a4d32c96ca3cbd, type: 3}
   numOfLoc: 1
-  summonCooldown: 10
+  summonCooldown: 6
   waitToSummon: 0
   timeBetweenSummons: 0
   timeBetweenVFXandSummon: 1
