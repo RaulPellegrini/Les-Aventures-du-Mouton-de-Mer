@@ -559,7 +559,7 @@ TextureImporter:
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,7 +580,7 @@ TextureImporter:
         width: 12
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,6 +588,27 @@ TextureImporter:
       bones: []
       spriteID: ce03a83dd98bdb24ea654730b546e444
       internalID: -952959172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeontileset-extended_22
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 592
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0209b4cfcd163eb40b25f4a31c6d866f
+      internalID: -1185118707
       vertices: []
       indices: 
       edges: []
@@ -618,6 +639,7 @@ TextureImporter:
       dungeontileset-extended_2: -1895332821
       dungeontileset-extended_20: 971561238
       dungeontileset-extended_21: -952959172
+      dungeontileset-extended_22: -1185118707
       dungeontileset-extended_3: 1400348625
       dungeontileset-extended_4: 302789389
       dungeontileset-extended_5: -1650817124
