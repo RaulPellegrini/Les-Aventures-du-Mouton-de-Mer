@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class EndGameEvent : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject signs;
     [SerializeField] GameObject summonVFX;
     [SerializeField] GameObject monster;
     [SerializeField] GameObject monster2;
@@ -55,6 +56,7 @@ public class EndGameEvent : MonoBehaviour
         if (other.transform.GetComponent<PlayerController>())
         {
             Apocalipse();
+            signs.SetActive(false);
             boxCollider.enabled = false;
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Sign : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Sign : MonoBehaviour
         if (other.transform.GetComponent<PlayerController>())
         {
             signMessage.SetActive(true);
+
         }
     }
 
@@ -23,6 +25,5 @@ public class Sign : MonoBehaviour
             signMessage.SetActive(false);
         }
 
-    }
-
+    }    
 }

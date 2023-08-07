@@ -6,6 +6,7 @@ public class ActivateEndGame : MonoBehaviour
 {
     [SerializeField] GameObject ActiveInventory;
     [SerializeField] GameObject EndGame;
+    [SerializeField] GameObject signs;
 
     ActiveInventory bossCheck;
 
@@ -18,6 +19,7 @@ public class ActivateEndGame : MonoBehaviour
     {
         if (bossCheck.endGame)
         {
+            signs.SetActive(false);
             EndGame.SetActive(true);
         }
     }
