@@ -9,6 +9,7 @@ public class ActivateEndGame : MonoBehaviour
     [SerializeField] GameObject signs;
 
     ActiveInventory bossCheck;
+    private static bool endGameStart = false;
 
     private void Awake()
     {
@@ -19,8 +20,15 @@ public class ActivateEndGame : MonoBehaviour
     {
         if (bossCheck.endGame)
         {
+            endGameStart = true;
+
+        }
+
+        if (endGameStart)
+        {
             signs.SetActive(false);
             EndGame.SetActive(true);
         }
     }
+
 }

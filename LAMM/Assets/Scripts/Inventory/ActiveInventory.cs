@@ -10,7 +10,7 @@ public class ActiveInventory : Singleton<ActiveInventory>
 
     static private bool isTheKnightAlive = false;
     static private bool isTheMushroomAlive = false;
-    static private bool isTheDemonAlive = true;
+    static private bool isTheDemonAlive = false;
     public bool endGame = false;
     
     private int activeSlotIndexNum = 0;

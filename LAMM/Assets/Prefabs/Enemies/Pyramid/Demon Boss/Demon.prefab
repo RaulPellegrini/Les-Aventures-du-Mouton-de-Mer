@@ -216,7 +216,8 @@ MonoBehaviour:
   attackCooldown: 2
   stopMovingWhileAttacking: 0
   guarding: 0
-  selfDestroyAfterAttack: 0
+  selfDestroy: 0
+  selfDestroyTime: 10
   caiting: 0
   chaising: 0
 --- !u!114 &3625892947145703698
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150cd61ee3ed2e4e83170a52debf8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 20
+  startingHealth: 54
   deathVFXPrefab: {fileID: 8266023964012809901, guid: 995a2ca871a18c446bd04e3ebce4aaf1, type: 3}
   knockBackThurst: 0.01
   Chest: 0
