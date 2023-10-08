@@ -317,11 +317,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_text
-      value: Attention to your DASH charges.
+      value: SPACE to DASH.
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_fontSize
-      value: 53.15
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829368664222259278, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -838,7 +842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_fontSize
-      value: 41.55
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829368664222259278, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1534,7 +1542,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 4.2987576
+      m_AnimationSpeed: 3.6695433
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -10, y: 14, z: 0}
@@ -1544,7 +1552,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 4.674471
+      m_AnimationSpeed: 4.232229
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: 14, z: 0}
@@ -1554,7 +1562,7 @@ Tilemap:
       - {fileID: 1034859057, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: -2054828955, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
       - {fileID: 742090039, guid: a9d4c91557dabb649bf777dc1374ae57, type: 3}
-      m_AnimationSpeed: 3.447626
+      m_AnimationSpeed: 4.578932
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -27008,6 +27016,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 288446731}
     m_Modifications:
+    - target: {fileID: 3271269554395374735, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3594610069290020001, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -27065,6 +27077,14 @@ PrefabInstance:
       value: 'Hold left click to
 
         ATTACK'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829368664222259278, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -33163,7 +33183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_fontSize
-      value: 41.25
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34222,7 +34246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 545908939}
-  signs: {fileID: 288446730}
   summonVFX: {fileID: 49587530436773996, guid: dd8a4c2465f0e5340bd04e99ff2a81fa, type: 3}
   monster: {fileID: 34667449885521978, guid: 5eaa28c6951e0ad468d8bb483ea3575d, type: 3}
   monster2: {fileID: 1810147124799524226, guid: 71dfb83cf42382d4dad8a1b01bd4a474, type: 3}
@@ -34353,7 +34376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1854172
+      value: -2.1663132
       objectReference: {fileID: 0}
     - target: {fileID: 2985136370602179183, guid: 10ed85a5a22b6cf4fa9fbe16b196a560, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34494,16 +34517,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_text
-      value: 'Hold left click to
-
-        Attack
-
+      value: 'Attention to your DASH CHARGES
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_fontSize
-      value: 68.8
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829368664222259278, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -36615,6 +36639,14 @@ PrefabInstance:
     - target: {fileID: 7527951640814763946, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
       propertyPath: m_Name
       value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564495613586853788, guid: 15b1b7d4d4413704a825650050f4191e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,9 +8,9 @@ public class ActiveInventory : Singleton<ActiveInventory>
     [SerializeField] GameObject invetorySlot2;
     [SerializeField] GameObject invetorySlot3;
 
-    static private bool isTheKnightAlive = false;
-    static private bool isTheMushroomAlive = false;
-    static private bool isTheDemonAlive = false;
+    static private bool isTheKnightAlive = true;
+    static private bool isTheMushroomAlive = true;
+    static private bool isTheDemonAlive = true;
     public bool endGame = false;
     
     private int activeSlotIndexNum = 0;
