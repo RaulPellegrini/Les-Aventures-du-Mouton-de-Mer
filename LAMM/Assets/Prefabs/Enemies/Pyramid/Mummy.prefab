@@ -808,7 +808,7 @@ MonoBehaviour:
   summonLoc: {fileID: 5241107757163022873}
   summonVFX: {fileID: 8266023964012809901, guid: 62f4db455f1a7ca47934ac19281b9b1e, type: 3}
   numOfLoc: 3
-  summonCooldown: 8
+  summonCooldown: 15
   waitToSummon: 0
   timeBetweenSummons: 1.5
   timeBetweenVFXandSummon: 0
